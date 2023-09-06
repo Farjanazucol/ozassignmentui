@@ -1,0 +1,72 @@
+ 
+ 
+ 
+ .iconContainer{
+    width: 100%;
+display: flex;
+flex-flow: row wrap;
+justify-content: flex-start;
+padding-top: 40px;
+}
+
+
+
+ 
+
+  
+
+  
+
+
+
+
+
+
+
+ 
+
+
+
+  .iconContainer .Col .Info span {
+    display: block;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+   
+  }
+
+  .iconContainer .Col .Info span b {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 60px;
+  }
+
+
+  .iconContainer .ordrSlider .sliderItem {
+   
+    display: inline-block;
+    width: auto !important;
+    margin-right: 39px;
+    padding-top: 20px;
+  }
+
+  .iconContainer .Col {
+    padding: 0 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    flex-basis: auto;
+    flex-grow: unset;
+  }
+
+  
+
+ 
+
+ 
+  /* Start Rating CSS */
+
+  

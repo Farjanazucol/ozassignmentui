@@ -1,0 +1,154 @@
+ 
+ 
+ 
+ .iconContainer{
+    width: 100%;
+display: flex;
+flex-flow: row wrap;
+justify-content: flex-start;
+padding-top: 40px;
+}
+
+.iconContainer {
+   
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+      
+}
+
+  .iconContainer .ordrSlider .sliderItem {
+    /* float: left; */
+    display: inline-block;
+    width: auto !important;
+    margin-right: 39px;
+    padding-top: 20px;
+  }
+
+  .iconContainer .Col {
+    /* padding: 0 15px; */
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    flex-basis: auto;
+    flex-grow: unset;
+    position: relative;
+
+  }
+
+  
+
+
+
+  .iconContainer .Col .Poly::after {
+
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+
+}
+.iconContainer .Col .Poly::after, .iconContainer .Col .Poly::before {
+
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: inherit;
+    content: "";
+    left: 0;
+
+}
+.iconContainer .Col .Poly::before {
+
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+
+}
+
+  .iconContainer .Poly {
+    clip-path: polygon(38% 0, 57% 0, 100% 50%, 60% 100%, 40% 100%, 0% 50%);
+   
+    height: 108px;
+    width: 61px;
+    background: #fcf1df;
+    text-align: center;
+    border-radius: 0;
+    line-height: 52px;
+  
+   
+
+}
+
+.iconContainer .Col .Info {
+    /* padding-left: 15px; */
+  }
+
+  .iconContainer .Col .Info span {
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+   
+  }
+
+  .iconContainer .Col .Info span b {
+    font-weight: 600;
+    font-size: 57px;
+    line-height: 75px;
+  }
+
+
+  .iconContainer .ordrSlider .sliderItem {
+    /* float: left; */
+    display: inline-block;
+    width: auto !important;
+    margin-right: 39px;
+    padding-top: 20px;
+  }
+
+  .iconContainer .Col {
+    /* padding: 0 15px; */
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    flex-basis: auto;
+    flex-grow: unset;
+  }
+
+  .iconContainer .Col_Gr{
+  
+    color: #3b5999;
+  }
+
+
+  .iconContainer .Col_Or{
+    color: #51893f;
+  }
+
+  .iconContainer .Col .Poly {
+    height: 108px;
+    width: 61px;
+    background: #fcf1df;
+    text-align: center;
+    border-radius: 0;
+    line-height: 52px;
+    position: absolute;
+    left: 32px;
+    z-index: -1;
+    top: -19px;
+
+  }
+
+  .iconContainer .Col .Poly::before {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+  /* Start Rating CSS */
+
+  
