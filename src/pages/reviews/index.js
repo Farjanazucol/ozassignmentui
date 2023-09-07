@@ -62,9 +62,8 @@ useEffect(()=>{
             <div className="flex flex-wrap -mx-4">
             <div className="w-full sm:w-1/2 xs:w-full  md:w-1/2  xl:w-2/3 p-4 ">
           <div>
-            <h1 className=' font-extrabold text-5xl leading-[3rem]' style={{ color: "#1E4755" }} >MyAssignment<span>Help Review</span> 
-
-            </h1>
+           
+            <h1 className=' font-extrabold text-5xl leading-[3rem] text-[#1E4755]' >MyAssignmentHelp  <span >  Review</span><br/></h1>
             <div className="flex ">
             <p className='text-xl leading-8  md:w-[100%] sm:w-[100%] pt-9 font-medium' style={{ color: "#1E4755" }} >Still in Two Minds? The Proof is in Numbers !
 38983 genuine reviews with a rating of 4.9/5.

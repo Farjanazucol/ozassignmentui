@@ -305,7 +305,7 @@ export default function Example() {
                     </div>
                    
                   <Link
-                    href={"/reviews"}
+                     href="/reviews"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Reviews
