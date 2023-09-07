@@ -20,42 +20,19 @@ import Services from "@/pages/services";
 import { useRouter } from "next/router";
 // import Services from "@/pages/services";
 
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
+// const products = [
+//   {
+//     name: "Analytics",
+//     description: "Get a better understanding of your traffic",
+//     href: "#",
+//     icon: ChartPieIcon,
+//   },
+ 
+// ];
+// const callsToAction = [
+//   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
+//   { name: "Contact sales", href: "#", icon: PhoneIcon },
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -91,7 +68,7 @@ export default function Example() {
       // Remove the event listener when the component unmounts
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, []);
+  }, [router.events]);
 
   const handleLinkClick = (href) => {
     setActiveLink(href);
@@ -108,7 +85,7 @@ export default function Example() {
           <div className="relative flex h-16 items-center justify-between">
             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex flex-shrink-0 items-center  ">
-                <div className="flex ">
+                <div className="flex  max-sm:hidden max-xs:hidden">
                   <Link
                     className=" flex text-lg font-medium text-[#1E4755]"
                     target="_blank"
@@ -124,7 +101,7 @@ export default function Example() {
                     +91 9999999999
                   </Link>
                 </div>
-                <div className="px-5  ">
+                <div className="px-5  max-sm:hidden max-xs:hidden">
                   <Link
                     className=" flex text-lg font-medium"
                     href="https://www.ozassignments.com/"
@@ -208,11 +185,11 @@ export default function Example() {
       {/* Header Bottom */}
       <nav className="bg-white">
         <nav
-          className="mx-auto flex w-full items-center justify-between pt-8 lg:px-32"
+          className="mx-auto flex w-full items-center justify-between pt-8 pb-0 p-4 lg:px-32"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <Link href={"/"} className="-m-1.5 p-1.5">
+            <Link href={"/"} className="-m-1.5 p-1.5 pb-8">
               <Image
                 className="h-8 w-auto"
                 src={"/assets/OZLogo.png"}
@@ -280,8 +257,8 @@ export default function Example() {
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
-              href={"/uploaddocuments"}
-              className="text-white px-2 py-3 text-lg font-normal  rounded-xl bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              href={"/upload-order"}
+              className="text-white px-2 py-3 text-lg mb-8 font-normal  rounded-xl bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
             >
               Upload Documents
             </Link>
@@ -318,58 +295,41 @@ export default function Example() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Disclosure as="div" className="-mx-3">
-                    {({ open }) => (
-                      <>
-                        <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-[#1E4755] hover:bg-gray-50">
-                          Services
-                          <ChevronDownIcon
-                            className="h-5 w-5 flex-none"
-                            aria-hidden="true"
-                          />
-                        </Disclosure.Button>
-                        <Disclosure.Panel className="mt-2 space-y-2">
-                          {[...products, ...callsToAction].map((item) => (
-                            <Disclosure.Button
-                              key={item.name}
-                              as="a"
-                              href={item.href}
-                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                            >
-                              {item.name}
-                            </Disclosure.Button>
-                          ))}
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
+                  
+
+                    {/****Dropdown Services*****/}
+                    <div className="-mx-3 block rounded-lg py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50">
+                    <Services/>
+            
+                    </div>
+                   
                   <Link
                     href={"/reviews"}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#1E4755] hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Reviews
                   </Link>
                   <Link
                     href={"/subject"}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#1E4755] hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Subject
                   </Link>
                   <Link
                     href={"/Blog"}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#1E4755] hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Blogs
                   </Link>
                   <Link
                     href={"/aboutus"}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#1E4755] hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     About Us
                   </Link>
                   <Link
                     href={"/uploaddocuments"}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#1E4755] hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Upload Documents
                   </Link>
@@ -378,7 +338,7 @@ export default function Example() {
                 <div className="py-6 flex">
                   <Link
                     href={"/login"}
-                    className="text-[#1E4755] block rounded-lg  text-base font-semibold leading-7 hover:bg-gray-50"
+                    className="text-[#1E4755] block rounded-lg  text-base font-normal leading-7 hover:bg-gray-50"
                     aria-current="page"
                   >
                     Login
@@ -387,7 +347,7 @@ export default function Example() {
 
                   <Link
                     href={"#"}
-                    className="text-[#1E4755] block rounded-lg   text-base font-semibold leading-7  hover:bg-gray-50 "
+                    className="text-[#1E4755] block rounded-lg   text-base font-normal leading-7  hover:bg-gray-50 "
                   >
                     Signup
                   </Link>

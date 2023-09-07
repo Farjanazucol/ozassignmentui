@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CONSTANTS from '../../components/constants'
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export async function getServerSideProps() {
   const res = await fetch(`${CONSTANTS.NGROK_URL}oz/api/blogs`)
@@ -19,6 +20,18 @@ function Blogs({data}) {
  
 
   return (
+    <>
+
+<Head>
+        <title> OZAssignment - Blogs</title>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="yes" name="mobile-web-app-capable" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+    </Head>
+  
+
     <div className="bg-white " >
       <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 " style={{
 
@@ -105,6 +118,7 @@ function Blogs({data}) {
         {/* </div> */}
       </div>
     </div>
+    </>
   )
 }
 

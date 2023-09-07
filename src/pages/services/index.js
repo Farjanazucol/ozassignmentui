@@ -3,6 +3,7 @@ import CONSTANTS from '../../components/constants'
 import Link from 'next/link';
 import { BiChevronDown } from 'react-icons/bi';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 
 
@@ -65,7 +66,7 @@ function Services() {
       // Remove the event listener when the component unmounts
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, []);
+  }, [router.events]);
 
   const handleLinkClick = (href) => {
     setActiveLink(href);
@@ -73,7 +74,17 @@ function Services() {
   };
    //End Active Link
   return (
+  <>
+  <Head>
+        <title> OZAssignment Help</title>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="yes" name="mobile-web-app-capable" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+    </Head>
   
+
 <div className="group inline-block">
 <div
  className={`py-2 text-lg font-normal leading-6  outline-none focus:outline-none  px-3  bg-white rounded-sm flex items-center  font-normal${
@@ -89,7 +100,7 @@ function Services() {
     <BiChevronDown className='w-6 h-6 text-[#1E4755]' />
   </span>
 </div>
-<ul className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top w-80 z-50 text-sm">
+<ul className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top w-80 z-50 text-sm   ">
   {servicesData.map((object, i) => (
     <li key={i.id} className="rounded-sm py-1 px-3 hover:bg-gray-100">
       <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
@@ -126,7 +137,7 @@ function Services() {
 </ul>
 </div>
   
-
+</>
 
   )
 }

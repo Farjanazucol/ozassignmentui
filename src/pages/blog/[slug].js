@@ -2,6 +2,7 @@ import CONSTANTS from "@/components/constants";
 import { useRouter } from "next/router";
 import React from "react";
 import Style from "./blog.module.css"
+import Head from "next/head";
 export async function getStaticPaths() {
   const res = await fetch(`${CONSTANTS.NGROK_URL}oz/api/blogs`);
 
@@ -64,7 +65,17 @@ function BlogDetails({ blog, allBlogs    }) {
     return <div>Loading...</div>;
   }
   return (
-   
+
+    <>
+   <Head>
+        <title> OZAssignment - Blog</title>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="yes" name="mobile-web-app-capable" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+    </Head>
+  
        
        <div>
       {blog.map((blog) => (
@@ -101,7 +112,7 @@ backgroundPosition: 'top center', // Center the background image
       ))}
       </div>
   
-      
+      </>
    
   );
 }

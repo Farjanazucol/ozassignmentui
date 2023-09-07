@@ -8,6 +8,7 @@ import Datepicker from "react-tailwindcss-datepicker";
 import { useRouter } from "next/router";
 //import "react-datepicker/dist/react-datepicker.css";
 import Modals from "../../components/modals/thankyou"
+import Head from "next/head";
 
 function UploadDocument() {
 
@@ -43,6 +44,21 @@ if(isModalOpen == true){
 
       
   return (
+
+    <>
+
+<Head>
+        <title> OZAssignment - Upload Order</title>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="yes" name="mobile-web-app-capable" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+    </Head>
+  
+
+
+
     <div className="bg-white ">
      
 <div className="bg-[#E6E7FD]">
@@ -356,6 +372,7 @@ onChange={handleValueChange}
       </div>
     
     </div>
+    </>
   );
 }
 

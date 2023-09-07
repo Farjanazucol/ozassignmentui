@@ -73,7 +73,7 @@ function Form() {
       <p className='text-3xl font-semibold'>Assignment Help</p>
       <p className='pt-2 text-base'>
   <i>
-  Get Assignment Help From World's No.1 Assignment Help Company
+  Get Assignment Help From World `&apos;`s No.1 Assignment Help Company
   </i>
   </p>
     </div>
@@ -137,7 +137,7 @@ function Form() {
         <strong>Writing</strong> Get your essay and assignment written from scratch by PhD expert
       </p>
       <p>
-        <strong>Rewriting:</strong> Paraphrase or rewrite your friend's essay with similar meaning at reduced cost
+        <strong>Rewriting:</strong> Paraphrase or rewrite your friend &apos; s essay with similar meaning at reduced cost
       </p>
       <p>
         <strong>Editing:</strong> Proofread your work by experts and improve grade at Lowest cost

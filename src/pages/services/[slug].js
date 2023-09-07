@@ -150,9 +150,9 @@ function ServiceDetails({ service, allServices }) {
         <div  dangerouslySetInnerHTML={{ __html: service.description }} />
       
         
-        <img src={service.banner} alt={service.banner_alt_text} />
+        {/* <img src={service.banner} alt={service.banner_alt_text} />
         <h2 className="">{service.banner_heading}</h2>
-        <p>{service.banner_description}</p>
+        <p>{service.banner_description}</p> */}
       </div>
 
       </div>

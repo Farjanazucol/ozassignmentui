@@ -1,4 +1,4 @@
-import UploadDocument from '@/pages/uploaddocuments';
+import UploadDocument from '@/pages/upload-order';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
@@ -10,7 +10,7 @@ function Uploadform() {
 
   const UploadDocumentPage = () => {
     // Use router.push to navigate to the next page
-    router.push('/uploaddocuments');
+    router.push('/upload-order');
   };
 
 
@@ -34,7 +34,7 @@ function Uploadform() {
   
     const buttons = [
       { label: 'Writing', description: 'Get your essay and assignment written from scratch by PhD expert' },
-      { label: 'Rewriting', description: "Paraphrase or rewrite your friend's essay with similar meaning at reduced cost" },
+      { label: 'Rewriting', description: "Paraphrase or rewrite your friend &apos;s essay with similar meaning at reduced cost" },
       { label: 'Editing', description: 'Proofread your work by experts and improve grade at Lowest cost' },
     ];
   
@@ -49,7 +49,7 @@ function Uploadform() {
       <p className='text-3xl font-semibold'>Assignment Help</p>
       <p className='pt-2 text-base'>
   <i>
-  Get Assignment Help From World's No.1 Assignment Help Company
+  Get Assignment Help From World &apos;s No.1 Assignment Help Company
   </i>
   </p>
     </div>
@@ -84,7 +84,9 @@ function Uploadform() {
       
   
       <div className=" sm:mt-8  items-center text-center">
-        <button type="submit" className="  rounded-md  bg-orange-500 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-20 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400" onClick={UploadDocumentPage}>Submit My Details</button>
+       <Link href={"/upload-order"} onClick={UploadDocumentPage}>
+       <button type="submit" className="  rounded-md  bg-orange-500 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-20 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400" >Submit My Details</button>
+       </Link>
       </div>
     </form>
      </div>
