@@ -117,7 +117,7 @@ useEffect(()=>{
             <div className="flex flex-wrap -mx-4">
            {reviewsData.map(item=>(
 
-<div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
+<div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4" key={item}>
                 <div  className="c-card block bg-white   overflow-hidden  shadow-[0px_0px_40px_0px_rgba(0,0,0,0.16)]">
 
 

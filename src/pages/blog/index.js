@@ -102,7 +102,7 @@ function Blogs({data}) {
             <div className="w-full sm:w-1/2 md:w-9/12  xl:w-9/12 p-4 pr-2 pt-10">   <div>
               {data.map((object , i ) => (
                 <div className='border-2 mb-4 px-4 py-4 sm:h-50 lg:h-40 xl:h-40'>
-                 <div className='flex'>
+                 <div className='flex' key={i}>
                  <Link href={'blog/' + object.slug + "/"} key={i} className='text-[#333333] text-lg cursor-pointer'>{object.title} <span className=' w-1/5  h-0.5 pt-0 bg-orange-600 inline-block hover:bg-sky-800 hover:w-[40%] right-0'>
                     
                     </span>

@@ -104,9 +104,9 @@ backgroundPosition: 'top center', // Center the background image
           <div className={Style.CustomContainer} dangerouslySetInnerHTML={{ __html: blog.description }} />
         
           {/* You can display other details here */}
-          <img src={blog.banner} alt={blog.banner_alt_text} />
+          {/* <img src={blog.banner} alt={blog.banner_alt_text} />
           <h2 className="">{blog.banner_heading}</h2>
-          <p>{blog.banner_description}</p>
+          <p>{blog.banner_description}</p> */}
         </div>
         </div>
       ))}
