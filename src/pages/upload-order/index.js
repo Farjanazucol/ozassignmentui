@@ -311,7 +311,7 @@ onChange={handleValueChange}
             </div>
 
             <div className="w-full sm:w-1/1 md:w-1/3  xl:w-1/3 sm:px-8 xl:px-0 lg:px-0 ">
-              <div className="border-2 shadow-md pl-0">
+              <div className="border-2 shadow-md pl-0 max-w-[530px]">
                 <div className="text-left sm:py-4 md:py-4 xl:py-4 xs:px-custom space-x-4 sm:px-4 md:px-4 xl:px-4 lg:px-4">
                   <p className="font-bold text-blue-500 space-x-4 py-4">
                     <span className="font-bold text-blue-500 px-4 ">Offers</span> <br />
