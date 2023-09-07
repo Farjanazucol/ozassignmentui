@@ -296,12 +296,12 @@ export default function Home() {
  </div>
 </div>
 
-  <div className="mx-auto w-7xl flex  pt-16 px-2  lg:px-32 sm:px-6 sm:pt-16 gap-10 grid-cols-4 justify-between">
+  <div className=" flex  pt-16 px-2  lg:px-32 sm:px-6 sm:pt-16 gap-10 grid-cols-4 justify-between ">
   {/* <div className="container mx-auto"> */}
             <div className="flex flex-wrap -mx-4">
    
   <div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4 pt-10">
-<div className='text-center  py-8 px-4  border-solid border  rounded-xl border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0'>
+<div className='text-center  py-8 px-2 max-w-[370px]  border-solid border  rounded-xl border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0'>
 
 
   
@@ -330,7 +330,7 @@ assignments.
 </div>
 
 <div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4 pt-10">
-<div className='text-center  py-8 px-4  border-solid border  rounded-xl border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0'>
+<div className='text-center  py-8 px-2 max-w-[370px] border-solid border  rounded-xl border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0'>
 
 
 
@@ -358,7 +358,7 @@ essay writing, editing of essay, proofreading.</p>
 </div>
 
 <div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4 pt-10">
-<div className='text-center  py-8 px-4  border-solid border rounded-xl border-gray-300 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0'> 
+<div className='text-center  py-8 px-2 max-w-[370px] border-solid border rounded-xl border-gray-300 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0'> 
   <div>
   <Image  className='inline' src="/assets/dissertation.svg" alt='dissertation' width={90} height={80} />
   </div>
@@ -386,7 +386,7 @@ to serve all your academic needs.
 </div>
 </div>
 <div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4 pt-10">
-<div className='text-center items-center  py-8 px-4  border-solid border  rounded-xl border-gray-300 transition ease-in-out delay-150  hover:-translate-y-1 skew-y-0 hover:scale-110  duration-300'> 
+<div className='text-center items-center max-w-[370px]  py-8 px-2  border-solid border  rounded-xl border-gray-300 transition ease-in-out delay-150  hover:-translate-y-1 skew-y-0 hover:scale-110  duration-300'> 
  
 
           
