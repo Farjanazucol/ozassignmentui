@@ -68,7 +68,7 @@ export default function Example() {
       // Remove the event listener when the component unmounts
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.pathname]);
+  });
 
   const handleLinkClick = (href) => {
     setActiveLink(href);
