@@ -96,8 +96,8 @@ if(isModalOpen == true){
 
       <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1">
         {/* <div className="container mx-auto"> */}
-          <div className="flex flex-wrap -mx-4 xl:gap-60 lg:gap-60 md:gap-32">
-            <div className="w-full sm:w-1/1 md:w-1/2 lg:w-1/2 xl:w-1/2 px-8 ">
+          <div className="flex flex-wrap -mx-4">
+            <div className="w-full sm:w-1/2 md:w-2/3  xl:w-2/3 p-4 ">
               
               <form className="w-full">
                 <h1 className="text-blue-500 font-medium text-2xl pb-12">
