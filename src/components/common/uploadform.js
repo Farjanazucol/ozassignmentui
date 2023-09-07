@@ -85,7 +85,7 @@ function Uploadform() {
   
       <div className=" sm:mt-8  items-center text-center">
        <Link href={"/upload-order"} onClick={UploadDocumentPage}>
-       <button type="submit" className="  rounded-md  bg-orange-500 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-20 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400" >Submit My Details</button>
+       <button type="submit" className="  rounded-md  bg-orange-500 sm:px-5 px-2 py-2 mt-4 sm:py-2  max-w-xs text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400" >Submit My Details</button>
        </Link>
       </div>
     </form>
