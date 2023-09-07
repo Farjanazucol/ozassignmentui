@@ -15,7 +15,7 @@ function Footer() {
 
   const UploadDocumentPage = () => {
     // Use router.push to navigate to the next page
-    router.push('/uploaddocuments');
+    router.push('/upload-order');
   };
 
 
@@ -30,7 +30,7 @@ function Footer() {
             <div className="mx-auto w-7xl px-6 lg:px-32">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-5">
                 <div className='py-12'>
-                    <Image src="/ozfooterlogo.png" width={160} height={20}   alt='footerlogo' />
+                    <Image src="/assets/ozfooterlogo.png" width={160} height={20}   alt='footerlogo' />
                 {/* <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl pt-8 pb-0">Special Offers 
                 </h2>
               <p className='text-gray-300 mt-1'>Subscribe to avail our special offers</p>
@@ -168,7 +168,9 @@ function Footer() {
                         <div className="mt-6 ">
 
 
+                            <Link  href={"/upload-order"}>
                             <button type="submit" className=" items-center text-center rounded-md bg-orange-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500" onClick={UploadDocumentPage}>Order Now</button>
+                            </Link>
                         </div>
                        </div>
                     </div>

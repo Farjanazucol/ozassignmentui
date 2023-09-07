@@ -62,7 +62,7 @@ useEffect(()=>{
             <div className="flex flex-wrap -mx-4">
             <div className="w-full sm:w-1/2 xs:w-full  md:w-1/2  xl:w-2/3 p-4 ">
           <div>
-            <h1 className=' font-extrabold sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl leading-[3rem]' style={{ color: "#1E4755" }} >MyAssignmentHelp Review
+            <h1 className=' font-extrabold text-5xl leading-[3rem]' style={{ color: "#1E4755" }} >MyAssignmentHelp <span> Review</span>
 
             </h1>
             <div className="flex ">
