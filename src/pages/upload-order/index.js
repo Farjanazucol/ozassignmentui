@@ -4,13 +4,65 @@ import React, { useState } from "react";
 import Image from 'next/image'
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faAdn, faAngellist, faLess } from "@fortawesome/free-brands-svg-icons";
-import Datepicker from "react-tailwindcss-datepicker"; 
+// import DatePicker from "react-datepicker"; 
 import { useRouter } from "next/router";
 //import "react-datepicker/dist/react-datepicker.css";
 import Modals from "../../components/modals/thankyou"
 import Head from "next/head";
 
 function UploadDocument() {
+  // const [dateTime, setDateTime] = useState(new Date());
+  const [loading, setLoading] = useState(false);
+
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+		setLoading(true);
+
+    const data = {
+			name: String(event.target.name.value),
+			email: String(event.target.email.value),
+			message: String(event.target.message.value),
+		};
+
+
+    const response = await fetch("/api/contact", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(data),
+		});
+
+
+
+    if (response.ok) {
+			console.log("Message sent successfully");
+			setLoading(false);
+			// reset the form
+			event.target.name.value = "";
+			event.target.email.value = "";
+			event.target.message.value = "";
+		}
+		if (!response.ok) {
+			console.log("Error sending message");
+			setLoading(false);
+		}
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
 
   const [value, setValue] = useState({ 
     startDate: null ,
@@ -98,7 +150,7 @@ if(isModalOpen == true){
           <div className="flex flex-wrap">
             <div className="w-full sm:w-1/2 md:w-2/3  xl:w-1/2 p-4 ">
               
-              <form className="w-full">
+              <form className="w-full" onSubmit={handleSubmit}>
                 <h1 className="text-blue-500 font-medium text-2xl pb-12">
                   Personal Details
                 </h1>
@@ -113,10 +165,13 @@ if(isModalOpen == true){
                   </div>
                   <div className="md:w-9/12">
                     <input
-                      id="inline-full-name"
+                   
+                      id="fullname"
                       type="text"
                       placeholder="Enter Full Name"
-                      className="hover:shadow-md  appearance-none border-b-gray-400  border-t-0 border-l-0 border-r-0  text-gray-300  w-full py-2  leading-6 focus:outline-none focus:bg-white focus:border-gray-400"
+                      className="hover:shadow-md  appearance-none border-b-gray-400  border-t-0 border-l-0 border-r-0  text-gray-800  w-full py-2  leading-6 focus:outline-none focus:bg-white focus:border-gray-400"
+                      required
+                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -134,7 +189,9 @@ if(isModalOpen == true){
                       id="email"
                       type="text"
                       placeholder="Enter Email"
-                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-300 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                      required
+                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -152,7 +209,9 @@ if(isModalOpen == true){
                       id="contact"
                       type="text"
                       placeholder="Enter Number"
-                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-300 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                      required
+                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -175,7 +234,10 @@ if(isModalOpen == true){
                       id="title"
                       type="text"
                       placeholder="Enter Assignment Title"
-                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-300 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white"
+
+                      required
+                      autoComplete="off"
                     />
                   </div>
                 </div>
@@ -192,7 +254,8 @@ if(isModalOpen == true){
                     <textarea
                       id="description"
                       placeholder="Enter Some Description"
-                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  h-20  w-full pt-6 text-gray-300 leading-6 focus:outline-none focus:bg-white focus:border-white  bg-white border py-2   "
+                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  h-20  w-full pt-6 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white  bg-white border py-2   "
+                     
                     ></textarea>
                   </div>
                 </div>
@@ -208,9 +271,11 @@ if(isModalOpen == true){
                   <div className="md:w-9/12">
                     <input
                       id="words"
-                      type="text"
+                      type="number"
                       placeholder="Enter Word Count"
-                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-300  leading-6 focus:outline-none focus:bg-white focus:border-white"
+                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-800  leading-6 focus:outline-none focus:bg-white focus:border-white"
+
+                     
                     />
                   </div>
                 </div>
@@ -225,14 +290,24 @@ if(isModalOpen == true){
                   </div>
                   <div className="md:w-9/12">
                    
-                  <Datepicker 
+                  {/* <Datepicker 
                   
                   placeholder="YYYY-MM-DD"
 useRange={false} 
 asSingle={true} 
 value={value} 
 onChange={handleValueChange} 
-/> 
+/>  */}
+{/* 
+<DatePicker
+        selected={dateTime}
+        onChange={date => setDateTime(date)}
+        showTimeSelect
+        timeFormat="HH:mm"
+        timeIntervals={15}
+        timeCaption="time"
+        dateFormat="MMMM d, yyyy h:mm aa"
+      /> */}
                   </div>
                 </div>
                 <div className="md:flex md:items-center mb-10">
@@ -252,7 +327,9 @@ onChange={handleValueChange}
                     <select
                  id="timezone"
                  placeholder="Asia/Kolkata"
-                 className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-500 bg-white border   w-full py-2 text-gray-400 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                 className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-500 bg-white border   w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white"
+                 required
+                 autoComplete="off"
                 >
                   <option>Asia/Kolkata</option>
                   <option>Canada</option>
@@ -291,7 +368,7 @@ onChange={handleValueChange}
                           htmlFor="file-upload"
                           className="relative cursor-pointer border-gray-600 rounded-sm bg-white font-semibold text-gray-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-white-600 focus-within:ring-offset-2 hover:text-white-500"
                         >
-                            <p className="text-gray-600 pr-8 text-sm/[17px] ">Drop file here</p>
+                            <p className="text-gray-800 pr-8 text-sm/[17px] ">Drop file here</p>
                       <input id="file-upload" name="file-upload" type="file"  className="relative focus:ring-white focus:border-transparent focus:border-white"  />
                         </label>
                       
