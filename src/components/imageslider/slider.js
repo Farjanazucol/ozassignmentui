@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 
@@ -75,7 +76,9 @@ const Slider = () => {
          
           className={` h-96 xs:pt-5 sm:pt-20  ${currentIndex === index ? '' : 'hidden'}`}
         >
-          <img
+          <Image
+          width={50}
+          height={50}
             src={card.image}
             alt="Image"
             className=" items-center text-center mx-auto "
