@@ -127,7 +127,8 @@ export default function Example() {
               <div className="flex items-center">
                 {/* <Link href={"/common/form"} className=" text-white px-4 py-2 mr-4 text-lg font-normal  rounded-xl   bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400">Order Now</Link> */}
 
-                <Link
+                <Link 
+                target="_blank"
                  href="https://www.ozassignments.com/en/accounts/login/"
                   className=" pr-3 px-3 py-2 text-lg font-medium"
                   aria-current="page"
@@ -277,7 +278,7 @@ export default function Example() {
                 <span className="sr-only">Your Company</span>
                 <Image
                   className="h-8 w-auto"
-                  src={"/OZLogo.png"}
+                  src={"/assets/OZLogo.png"}
                   width={200}
                   height={80}
                   alt="Your Company"
@@ -328,7 +329,7 @@ export default function Example() {
                     About Us
                   </Link>
                   <Link
-                    href={"/uploaddocuments"}
+                   href={"/upload-order"}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Upload Documents
@@ -337,7 +338,7 @@ export default function Example() {
 
                 <div className="py-6 flex">
                   <Link
-                    href={"/login"}
+                    href="https://www.ozassignments.com/en/accounts/login/"
                     className="text-[#1E4755] block rounded-lg  text-base font-normal leading-7 hover:bg-gray-50"
                     aria-current="page"
                   >
@@ -346,7 +347,8 @@ export default function Example() {
                   <span className="text-[#1E4755] px-3">/</span>
 
                   <Link
-                    href={"#"}
+                  target="_blank"
+                     href="https://www.ozassignments.com/en/accounts/signup/"
                     className="text-[#1E4755] block rounded-lg   text-base font-normal leading-7  hover:bg-gray-50 "
                   >
                     Signup

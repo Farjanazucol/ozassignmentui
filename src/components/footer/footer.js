@@ -215,13 +215,13 @@ function Footer() {
                  
                   <div className=' text-center items-center mx-auto grid w-7xl   lg:max-w-none lg:grid-cols-3   justify-between'>
 <div>
-    <Image src="/visacard.png" alt="visacard" width={250} height={100} />
+    <Image src="/assets/visacard.png" alt="visacard" width={250} height={100} />
 </div>
 <div>
-<Image src="/dmca.png" alt="visacard" width={250} height={400} />
+<Image src="/assets/dmca.png" alt="visacard" width={250} height={400} />
 </div>
 <div>
-<Image src="/copyscape.png" alt="visacard" width={200} height={100} />
+<Image src="/assets/copyscape.png" alt="visacard" width={200} height={100} />
 </div>
                    </div>
                   </div>
