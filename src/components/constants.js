@@ -1,4 +1,4 @@
-const NGROK_URL = 'http://142.93.217.26:7000/'
+const NGROK_URL = 'https://www.ozassignments.com/'
 
 
 const CONSTANTS = {
