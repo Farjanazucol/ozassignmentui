@@ -278,7 +278,7 @@ export default function Home() {
 
 
   <div className=" sm:mt-8  mt-10  items-center text-center">
-      <Link href={"/"}>
+      <Link href={"/upload-order"} onClick={UploadDocumentPage}>
       <button type="submit" className="  rounded-md bg-orange-600 px-8 py-3 text-center  border-2 text-white hover:text-white   hover:bg-orange-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600" onClick={UploadDocumentPage}>Order Now</button>
       </Link>
     </div>
