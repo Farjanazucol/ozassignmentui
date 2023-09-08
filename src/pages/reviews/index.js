@@ -31,7 +31,7 @@ useEffect(()=>{
       if (contentType && contentType.includes("application/json")) {
         const data = await response.json();
         console.error("data********", data);
-        setReviewsData(data);
+        setReviewsData(data.results);
       } else {
         console.error("Response was not JSON.");
         // Handle non-JSON responses as needed.

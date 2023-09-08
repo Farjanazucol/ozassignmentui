@@ -7,7 +7,7 @@ import Image from 'next/image'
 // import DatePicker from "react-datepicker"; 
 import { useRouter } from "next/router";
 //import "react-datepicker/dist/react-datepicker.css";
-import Modals from "../../components/modals/thankyou"
+import Modals from "../../components/thankyou"
 import Head from "next/head";
 
 function UploadDocument() {
@@ -22,11 +22,17 @@ function UploadDocument() {
     const data = {
 			name: String(event.target.name.value),
 			email: String(event.target.email.value),
+      contact: Number(event.target.contact.value),
+      title:String(event.target.title.value),
+      description:String(event.target.description.value),
+      word:Number(event.target.word.value),
 			message: String(event.target.message.value),
+      timezone: String(event.target.timezone.value),
+      file: String(event.target.file.value),
 		};
 
 
-    const response = await fetch("/api/contact", {
+    const response = await fetch(`${CONSTANTS.NGROK_URL}api/v1/user/upload/`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -42,7 +48,13 @@ function UploadDocument() {
 			// reset the form
 			event.target.name.value = "";
 			event.target.email.value = "";
+      event.target.contact.value= "";
+      event.target.title.value = "";
+      event.target.description.value = "";
+      event.target.word.value = "";
 			event.target.message.value = "";
+      event.target.timezone.value = "";
+      event.target.file.value = "";
 		}
 		if (!response.ok) {
 			console.log("Error sending message");
@@ -166,7 +178,7 @@ if(isModalOpen == true){
                   <div className="md:w-9/12">
                     <input
                    
-                      id="fullname"
+                      id="name"
                       type="text"
                       placeholder="Enter Full Name"
                       className="hover:shadow-md  appearance-none border-b-gray-400  border-t-0 border-l-0 border-r-0  text-gray-800  w-full py-2  leading-6 focus:outline-none focus:bg-white focus:border-gray-400"
@@ -270,7 +282,7 @@ if(isModalOpen == true){
                   </div>
                   <div className="md:w-9/12">
                     <input
-                      id="words"
+                      id="word"
                       type="number"
                       placeholder="Enter Word Count"
                       className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-800  leading-6 focus:outline-none focus:bg-white focus:border-white"
@@ -356,7 +368,7 @@ onChange={handleValueChange}
                     <input
                       type="file"
                       name="input"
-                      id="input"
+                      id="file"
                       className="absolute inset-0 opacity-0 cursor-pointer"
                       // onchange="handleFileChange(this)"
                     />

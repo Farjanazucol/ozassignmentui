@@ -10,17 +10,9 @@ function Thankyou() {
 
   const cancelButtonRef = useRef(null);
 
-  // chats  link
-  // https://chatserver.comm100.com/chatWindow.aspx?siteId=227686&planId=195#
-
+ 
   return (
-    <Transition.Root show={open} as={Fragment} onClick={() => setOpen(false)}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        initialFocus={cancelButtonRef}
-        onClose={setOpen}
-      >
+    
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <div className="relative transform overflow-hidden rounded-lg  text-left  transition-all sm:my-8 sm:w-full sm:max-w-md">
@@ -76,8 +68,7 @@ function Thankyou() {
             </div>
           </div>
         </div>
-      </Dialog>
-    </Transition.Root>
+     
   );
 }
 

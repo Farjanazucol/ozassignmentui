@@ -210,7 +210,7 @@ export default function Example() {
               <Bars3Icon className="h-6 w-6 " aria-hidden="true" />
             </button>
           </div>
-          <Popover.Group className="hidden lg:flex md:gap-x-10 xl:gap-x-24 lg:gap-x-12">
+          <Popover.Group className="hidden lg:flex md:gap-x-10 xl:gap-x-16 lg:gap-x-12">
             
 
             {/****Dropdown Services*****/}

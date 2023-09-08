@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import CONSTANTS from '../../components/constants'
 import Link from 'next/link';
-import { BiChevronDown } from 'react-icons/bi';
+import { BiChevronDown, BiChevronRight, BiChevronUp } from 'react-icons/bi';
+// import {BiChevronAbove} from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
@@ -100,14 +101,18 @@ function Services() {
     <BiChevronDown className='w-6 h-6 text-[#1E4755]' />
   </span>
 </div>
-<ul className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top w-80 z-50 text-sm   ">
+<ul className="bg-white  rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top w-80 z-50 text-sm   ">
   {servicesData.map((object, i) => (
     <li key={i.id} className="rounded-sm py-1 px-3 hover:bg-gray-100">
       <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
-        <span className="pr-1 flex-1 ">{object.title}</span>
-        <BiChevronDown className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
+      <Link href={'services/' + object.slug + "/"}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
+      <span className="pr-1 flex-1 ">{object.title}</span>
+                   
+                  </Link>
+       
+        <BiChevronUp className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
       </button>
-      <ul className="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-80 z-50">
+      <ul className="bg-white  rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-80 z-50">
         {object.children.map((child) => (
           <li key={child.id} className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
             <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
@@ -116,9 +121,9 @@ function Services() {
                     <span className="pr-1 flex-1">{child.title}</span>
                    
                   </Link>
-              <BiChevronDown className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
+              <BiChevronUp className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
             </button>
-            <ul className="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-80 z-50">
+            <ul className="bg-white  rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left w-80 z-50">
              
               {child.children.map((grandchild, i) => (
                 <li key={grandchild.id} className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
