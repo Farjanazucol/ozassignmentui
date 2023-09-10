@@ -13,37 +13,90 @@ function Reviews() {
   // fetch data from API
   const [reviewsData, setReviewsData] = useState([]);
 
- 
 
 
-useEffect(()=>{
+  //1)function
+
+// useEffect(()=>{
   
 
+//   async function fetchData() {
+//     try {
+//       const response = await fetch(`${CONSTANTS.NGROK_URL}oz/api/all-reviews`);
+      
+//       if (!response.ok) {
+//         throw new Error(`HTTP error! Status: ${response.status}`);
+//       }
+  
+//       const contentType = response.headers.get("content-type");
+//       if (contentType && contentType.includes("application/json")) {
+//         const data = await response.json();
+//         console.error("data********", data);
+//         setReviewsData(data.results);
+
+
+       
+
+
+//       } else {
+//         console.error("Response was not JSON.");
+//         // Handle non-JSON responses as needed.
+//       }
+//     } catch (error) {
+//       console.error("Error fetching or parsing data:", error.message);
+//       // Handle the error gracefully, e.g., display an error message to the user
+//     }
+//   }
+  
+//   fetchData()
+// },[])
+
+
+
+
+
+//3)used rd function
+//******************************** */
+
+const [page, setPage] = useState(1); // Initialize page state with 1
+const [nextPageUrl, setNextPageUrl] = useState(
+  `${CONSTANTS.NGROK_URL}oz/api/all-reviews?page=1`
+);
+
+useEffect(() => {
   async function fetchData() {
     try {
-      const response = await fetch(`${CONSTANTS.NGROK_URL}oz/api/all-reviews`);
-      
+      const response = await fetch(nextPageUrl);
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-  
+
       const contentType = response.headers.get("content-type");
       if (contentType && contentType.includes("application/json")) {
         const data = await response.json();
-        console.error("data********", data);
-        setReviewsData(data.results);
+
+        setReviewsData((prevData) => [...prevData, ...data.results]);
+
+        // Update nextPageUrl based on the page state
+        setNextPageUrl(`${CONSTANTS.NGROK_URL}oz/api/all-reviews?page=${page + 1}`);
       } else {
         console.error("Response was not JSON.");
-        // Handle non-JSON responses as needed.
       }
     } catch (error) {
       console.error("Error fetching or parsing data:", error.message);
-      // Handle the error gracefully, e.g., display an error message to the user
     }
   }
-  
-  fetchData()
-},[])
+
+  fetchData();
+}, [nextPageUrl, page]); // useEffect depends on nextPageUrl
+
+const loadMore = () => {
+  // Increment the page state when "Load More" is clicked
+  setPage(page + 1);
+};
+
+
 
   return (
     <>
@@ -65,7 +118,7 @@ useEffect(()=>{
            
             <h1 className=' font-extrabold text-4xl leading-[3rem] text-[#1E4755]' >MyAssignmentHelp  <span >  Review</span><br/></h1>
             <div className="flex ">
-            <p className='text-xl leading-8  md:w-[100%] sm:w-[100%] pt-9 font-medium' style={{ color: "#1E4755" }} >Still in Two Minds? The Proof is in Numbers !
+            <p className='text-base leading-8  md:w-[100%] sm:w-[100%] pt-9 font-medium' style={{ color: "#1E4755" }} >Still in Two Minds? The Proof is in Numbers !
 38983 genuine reviews with a rating of 4.9/5.
             </p>
            
@@ -184,10 +237,9 @@ User ID:
               </div>
            ))}
              
-             
-             
-
+             <button onClick={loadMore}>Load More</button>
             </div>
+           
           {/* </div> */}
 
         </div>
@@ -208,17 +260,7 @@ function formatDate(timestamp) {
   }
 
 
-//   // Fetch data from Api using server side props
-// export async function getServerSideProps() {
-//   const query = await fetch("https://fakestoreapi.com/products");
-//   const response = await query.json();
 
-//   return {
-//       props: {
-//         reviewsData : response
-//       },
-//   };
-// }
 
 
 

@@ -78,16 +78,18 @@ function ServiceDetails({ service, allServices }) {
     <div className="flex flex-wrap -mx-4">
     <div className="w-full sm:w-9/12 xs:w-full md:w-1/3  xl:w-2/3  p-4 pt-10">
   <div>
-    <h1 className=' font-extrabold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl w-[70%] leading-[3rem]' style={{ color: "#1E4755" }} >{service.title}
+    <h1 className=' font-extrabold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl w-[70%] leading-[3rem]' style={{ color: "#1E4755" }} >{service.banner_heading
+}
 
     </h1>
     <div className="flex ">
-    <p className='text-xl leading-8 xl:w-[70%] md:w-[100%] sm:w-[100%] pt-9 font-medium' >Sign up NOW to let the best essay writers online help you!
+    <p className='text-xl leading-8 xl:w-[70%] md:w-[100%] sm:w-[100%] pt-9 font-medium' >{service.banner_description
+}
     </p>
    
        
         </div>
-    <div className={Style.iconContainer}>
+    {/* <div className={Style.iconContainer}>
       <div className={`${Style.ordrSlider} flex grid-cols-3`} >
         <div className={Style.sliderItem} >
           <div className={Style.Col}>
@@ -129,7 +131,7 @@ function ServiceDetails({ service, allServices }) {
         </div>
       </div>
     </div>
-</div>
+</div> */}
   </div>
   </div>
   <div className="w-full  xl:w-1/3 p-4 pt-10">

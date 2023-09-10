@@ -87,7 +87,7 @@ export default function Example() {
               <div className="flex flex-shrink-0 items-center  ">
                 <div className="flex  max-sm:hidden max-xs:hidden">
                   <Link
-                    className=" flex text-lg font-medium text-[#1E4755]"
+                    className=" flex text-base font-medium text-[#1E4755]"
                     target="_blank"
                     href="tel:+91 9999999999"
                   >
@@ -103,7 +103,7 @@ export default function Example() {
                 </div>
                 <div className="px-5  max-sm:hidden max-xs:hidden">
                   <Link
-                    className=" flex text-lg font-medium"
+                    className=" flex text-base font-medium"
                     href="https://www.ozassignments.com/"
                     target="_blank"
                     style={{ color: "#1E4755" }}
@@ -125,12 +125,12 @@ export default function Example() {
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-8 ">
               <div className="flex items-center">
-                {/* <Link href={"/common/form"} className=" text-white px-4 py-2 mr-4 text-lg font-normal  rounded-xl   bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400">Order Now</Link> */}
+                {/* <Link href={"/common/form"} className=" text-white px-4 py-2 mr-4 text-base font-normal  rounded-xl   bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400">Order Now</Link> */}
 
                 <Link 
                 target="_blank"
                  href="https://www.ozassignments.com/en/accounts/login/"
-                  className=" pr-3 px-3 py-2 text-lg font-medium"
+                  className=" pr-3 px-3 py-2 text-base font-medium"
                   aria-current="page"
                   style={{ color: "#1E4755" }}
                 >
@@ -140,7 +140,7 @@ export default function Example() {
 
                 <Link
                   href="https://www.ozassignments.com/en/accounts/signup/"
-                  className="pr-4  px-3 py-2 text-lg font-medium"
+                  className="pr-4  px-3 py-2 text-base font-medium"
                   style={{ color: "#1E4755" }}
                 >
                   Signup
@@ -148,7 +148,7 @@ export default function Example() {
                 <Link
                   href="#"
                   onClick={handleSearchIconClick}
-                  className=" px-1 py-2 text-lg font-medium"
+                  className=" px-1 py-2 text-base font-medium"
                   style={{ color: "#1E4755" }}
                 >
                   <svg
@@ -220,7 +220,7 @@ export default function Example() {
 
 <Link
         href="/reviews"
-        className={`py-2 text-lg font-normal leading-6 pb-8 ${
+        className={`py-2 text-base font-normal leading-6 pb-8 ${
           activeLink === '/reviews' ? 'text-[#1E4755] border-b-[3px] border-orange-600 pb-1' : 'text-[#1E4755]'
         }`}
         onClick={() => handleLinkClick('/reviews')}
@@ -230,7 +230,7 @@ export default function Example() {
            
              <Link
         href="/subject"
-        className={`py-2 text-lg font-normal leading-6 pb-8 ${
+        className={`py-2 text-base font-normal leading-6 pb-8 ${
           activeLink === '/subject' ? 'text-[#1E4755] border-b-[3px] border-orange-600 pb-1' : 'text-[#1E4755]'
         }`}
         onClick={() => handleLinkClick('/subject')}
@@ -239,7 +239,7 @@ export default function Example() {
       </Link>
       <Link
         href="/blog"
-        className={`py-2 text-lg font-normal leading-6  pb-8  ${
+        className={`py-2 text-base font-normal leading-6  pb-8  ${
           activeLink === '/blog' ? 'text-[#1E4755] border-b-[3px] border-orange-600 pb-1' : 'text-[#1E4755]'
         }`}
         onClick={() => handleLinkClick('/blog')}
@@ -248,7 +248,7 @@ export default function Example() {
       </Link>
       <Link
         href="/aboutus"
-        className={`py-2 text-lg font-normal leading-6  pb-8  ${
+        className={`py-2 text-base font-normal leading-6  pb-8  ${
           activeLink === '/aboutus' ? 'text-[#1E4755] border-b-[3px] border-orange-600 pb-1' : 'text-[#1E4755]'
         }`}
         onClick={() => handleLinkClick('/aboutus')}
@@ -259,7 +259,7 @@ export default function Example() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               href={"/upload-order"}
-              className="text-white px-2 py-3 text-lg mb-8 font-normal  rounded-xl bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              className="text-white px-2 py-3 text-base mb-8 font-normal  rounded-xl bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
             >
               Upload Documents
             </Link>

@@ -23,11 +23,11 @@ function AboutUs() {
    
   <div className="w-full sm:w-1/2 md:w-1/2  xl:w-1/2 p-4 ">
   <div>
-  <h1 className=' font-extrabold text-5xl leading-[3rem] text-[#1E4755]' >About  <span className='text-orange-400 '>Oz Assignment</span><br/>
+  <h1 className=' font-extrabold text-4xl leading-[3rem] text-[#1E4755]' >About  <span className='text-orange-400 '>Oz Assignment</span><br/>
 </h1>
   <p className='text-2xl leading-10 pt-5 font-bold opacity-80'  style={{color:"#1E4755"}} >Solving queries around all things “assignments”
 </p>
-  <p className='text-xl leading-8 max-w-xl pt-9 font-medium'  style={{color:"#1E4755"}} >Facing trouble with giving your assignments a final touch? We at Oz, provide Online Proofreading and Editing Services. 
+  <p className='text-base leading-8 max-w-xl pt-9 font-medium'  style={{color:"#1E4755"}} >Facing trouble with giving your assignments a final touch? We at Oz, provide Online Proofreading and Editing Services. 
 </p>
 
 
@@ -54,10 +54,10 @@ function AboutUs() {
    
   <div className="w-full sm:w-1/2 md:w-1/2  xl:w-1/2 p-4 ">
   <div>
-  <h1 className=' font-extrabold text-5xl leading-[3rem] text-[#1E4755]' >Who We Are ?  
+  <h1 className=' font-extrabold text-4xl leading-[3rem] text-[#1E4755]' >Who We Are ?  
 </h1>
  
-  <p className='text-xl leading-8 max-w-xl pt-9 font-medium space-x-4'  style={{color:"#1E4755"}} >Our services are exclusively focused on providing high-quality academic content like Admission Essay Services, Business Editing Services, Academic Proofreading Services, Academic Services, and Professional Editing Services. 
+  <p className='text-base leading-8 max-w-xl pt-9 font-medium space-x-4'  style={{color:"#1E4755"}} >Our services are exclusively focused on providing high-quality academic content like Admission Essay Services, Business Editing Services, Academic Proofreading Services, Academic Services, and Professional Editing Services. 
 </p>
 
 

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Style from "./blog.module.css"
 import Head from "next/head";
+import Image from "next/image";
 export async function getStaticPaths() {
   const res = await fetch(`${CONSTANTS.NGROK_URL}oz/api/blogs`);
 
@@ -97,14 +98,14 @@ function BlogDetails({ blog, allBlogs }) {
               backgroundRepeat: 'repeat-y',
               backgroundPosition: 'top center', // Center the background image
             }}>
-              <h1 className='text-center text-5xl font-bold leading-[3rem] text-white' > {blog.title}</h1>
+              <h1 className='text-center text-4xl font-bold leading-[3rem] text-white' > {blog.title}</h1>
             </div>
             <div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
 
               <div className={Style.CustomContainer} dangerouslySetInnerHTML={{ __html: blog.description }} />
 
               {/* You can display other details here */}
-              {/* <img src={blog.banner} alt={blog.banner_alt_text} />
+              {/* <Image src={blog.banner} alt={blog.banner_alt_text} />
           <h2 className="">{blog.banner_heading}</h2>
           <p>{blog.banner_description}</p> */}
             </div>
