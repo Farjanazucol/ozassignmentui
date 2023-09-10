@@ -15,8 +15,10 @@
     "@heroicons/react": "^2.0.18",
     "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "10.4.15",
+    "axios": "^1.5.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "formik": "^2.4.4",
     "next": "13.4.19",
     "node-fetch": "^3.3.2",
     "postcss": "8.4.29",
@@ -27,6 +29,8 @@
     "react-hook-form": "^7.46.1",
     "react-icons": "^4.10.1",
     "react-tailwindcss-datepicker": "^1.6.6",
-    "tailwindcss": "3.3.3"
+    "rsuite": "^5.39.0",
+    "tailwindcss": "3.3.3",
+    "yup": "^1.2.0"
   }
 }

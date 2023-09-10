@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Form from "../../components/common/uploadform";
-//import Style from "./reviews.module.css";
+import Style from "../reviews/reviews.module.css";
 import CONSTANTS from "../../components/constants";
 import Head from "next/head";
 
