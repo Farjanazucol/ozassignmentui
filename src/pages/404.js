@@ -9,8 +9,8 @@ function PageNotFound() {
     <div className="bg-white">
     <div className="mx-auto w-7xl flex  pt-16 px-2 lg:py-16 sm:py-16 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
     <div className="container mx-auto">
-        <div className="flex flex-wrap gap-60 -mx-4">
-        <div className="w-full sm:w-1/2 md:w-1/2 lg:1/2  xl:1/2 p-4 pt-10">
+        <div className="flex flex-wrap  -mx-4">
+        <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4">
       <div>
      
        
@@ -30,7 +30,7 @@ function PageNotFound() {
             </Link>
      </div>
       </div>
-      <div className="w-full sm:w-1/3 md:w-1/3  xl:1/3 pt-10">
+      <div className="sm:px-8 xl:px-0 lg:px-0  w-full  md:w-1/2 xl:w-1/3 p-4 ">
      
      
       {/* Form Design */}
