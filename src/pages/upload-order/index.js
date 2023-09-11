@@ -195,7 +195,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Full Name:
@@ -226,7 +226,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Email:
@@ -259,7 +259,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                    Contact No:
@@ -295,7 +295,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-6 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Service Type:
@@ -328,7 +328,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-0 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Description:
@@ -361,7 +361,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                  Words:
@@ -394,7 +394,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Deadline:
@@ -427,7 +427,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   TimeZone:
