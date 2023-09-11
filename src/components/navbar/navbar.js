@@ -216,11 +216,11 @@ export default function Example() {
       </Link>
            
              <Link
-        href="/subject"
+        href="/#"
         className={`py-2 text-base font-normal leading-6 pb-8 ${
-          activeLink === '/subject' ? 'text-[#1E4755] border-b-[3px] border-orange-600 pb-1' : 'text-[#1E4755]'
+          activeLink === '/#' ? 'text-[#1E4755] border-b-[3px] border-orange-600 pb-1' : 'text-[#1E4755]'
         }`}
-        onClick={() => handleLinkClick('/subject')}
+        onClick={() => handleLinkClick('/#')}
       >
         Subject
       </Link>
@@ -298,7 +298,7 @@ export default function Example() {
                     Reviews
                   </Link>
                   <Link
-                    href={"/subject"}
+                    href={"/#"}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50"
                   >
                     Subject

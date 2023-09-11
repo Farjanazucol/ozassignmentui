@@ -42,11 +42,11 @@ export default function Home() {
 
             <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4 ">
               <div>
-                <h1 className=' font-extrabold text-3xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span><br />
+                <h1 className='font-semibold text-3xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span><br />
                   <span> Services</span></h1>
                 <p className='text-2xl leading-10 pt-5 font-bold opacity-80' style={{ color: "#1E4755" }} >Solving queries around all things “assignments”
                 </p>
-                <p className='text-base leading-8  pt-9 font-medium' style={{ color: "#1E4755" }} >Facing trouble with giving your assignments a final touch? We at Oz, provide Online Proofreading and Editing Services.
+                <p className='text-base leading-8 max-w-lg  pt-9 font-medium' style={{ color: "#1E4755" }} >Facing trouble with giving your assignments a final touch? We at Oz, provide Online Proofreading and Editing Services.
                 </p>
 
                 <div className=' mt-10'>
@@ -311,7 +311,7 @@ export default function Home() {
                 </div>
 
                 <div> <h1 className='text-lg  font-semibold opacity-80  py-2 px-2'>Online Assignment Help</h1></div>
-                <div> <p className='text-start text-gray-600 texr-lg leading-7  py-1 px-4'>MyAssignmenthelp.com is the leading assignment help provider worldwide. We have an exclusive
+                <div> <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>MyAssignmenthelp.com is the leading assignment help provider worldwide. We have an exclusive
                   assignmenthelp
                   service for Indian students who are pursuing their degrees overseas. We have a team of
                   assignment
@@ -340,7 +340,7 @@ export default function Home() {
                 </div>
 
                 <div> <p className='text-lg py-2 px-2 font-semibold opacity-80'>Custom Essay Writing Help</p></div>
-                <div> <p className='text-start text-gray-600 texr-lg leading-7  py-1 px-4'>MyAssignmenthelp.com helps Indian students to compose different types of essays within the
+                <div> <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>MyAssignmenthelp.com helps Indian students to compose different types of essays within the
                   givendeadline.
                   With a highly qualified and experienced group of essay writing experts, we assist the students
                   to
@@ -368,7 +368,7 @@ export default function Home() {
                   Dissertation Writing Help
                 </p></div>
                 <div>
-                  <p className='text-start text-gray-600 texr-lg leading-7  py-1 px-4'>
+                  <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>
                     Experts, at MyAssignmenthelp.com, are capable of delivering dissertations utilizing both primary and secondary research. We understand that each course has different requirements in terms of research methodologies. This is the reason we assign subject-specific experts who can give you the best idea on whether quantitative and qualitative research is appropriate for you.
                   </p>
                 </div>
@@ -395,7 +395,7 @@ export default function Home() {
                   All Writing Services
                 </h1></div>
                 <div>
-                  <p className='text-start text-gray-600 texr-lg leading-7  py-1 px-4'>
+                  <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>
                     We at MyAssignmenthelp offer all types of online academic services, be it homework help, coursework help, case study help, thesis/research paper writing help and online exam help. And for each service, each subject and each topic, we dedicate a expert writer who has knowledge in that specific field of study. Experience impeccable academic writing service like never before.
                   </p>
                 </div>
@@ -454,7 +454,7 @@ export default function Home() {
 
           <div className="w-full sm:w-1/2 md:w-1/3  xl:1/4 p-1 pt-20 ">
             <div className=' border-2 mt-5'>
-              <div className='flex px-3   py-0 space-x-4 space-y-12'>
+              <div className='flex px-3 py-2 space-x-4 space-y-8'>
 
                 <div>
                   <h1 className='text-left text-3xl text-[#1E4755]' >CONTACT DETAILS</h1>

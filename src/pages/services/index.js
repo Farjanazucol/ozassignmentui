@@ -105,7 +105,10 @@ function Services() {
   {servicesData.map((object, i) => (
     <li key={i.id} className="rounded-sm py-1 px-3 hover:bg-gray-100">
       <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
-      <Link href={'services/' + object.slug + "/"}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
+      <Link 
+      // href={'services/' + object.slug + "/"} 
+      href="/services/[slug]"
+      as={`/services/${object.slug}`}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
       <span className="pr-1 flex-1 ">{object.title}</span>
                    
                   </Link>
@@ -117,7 +120,10 @@ function Services() {
           <li key={child.id} className="rounded-sm w-full   relative px-3 py-1 hover:bg-gray-100">
             <button className="text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
              
-              <Link href={'services/' + child.slug + "/"}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
+              <Link 
+              // href={'services/' + child.slug + "/"} 
+               href="/services/[slug]"
+               as={`/services/${child.slug}`} key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
                     <span className="pr-1 flex-1">{child.title}</span>
                    
                   </Link>
@@ -127,7 +133,11 @@ function Services() {
              
               {child.children.map((grandchild, i) => (
                 <li key={grandchild.id} className="rounded-sm relative px-3 py-1 hover:bg-gray-100 grid-cols-3">
-                  <Link href={'services/' + grandchild.slug + "/"}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
+                  <Link 
+                  // href={'services/' + grandchild.slug + "/"} 
+                  href="/services/[slug]"
+                  as={`/services/${grandchild.slug}`}
+                   key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
                     <span className="flex-1">{grandchild.title}</span>
                    {/* <BiChevronRight className='w-6 h-6 text-[#1E4755] hover:text-orange-500' /> */}
                   </Link>
