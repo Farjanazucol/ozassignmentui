@@ -113,7 +113,7 @@ function UploadDocument() {
 
         try{
           const response = await axios.post(
-            "https://7986-2401-4900-1c54-f63d-ffa5-f1f5-14e7-5b55.ngrok-free.app/task/api/upload/",
+            "https://ecc3-2401-4900-1c54-f63d-6d8d-d2e-f30f-354d.ngrok-free.app/task/api/upload/",
             formDataToSend,
             {
               headers: {

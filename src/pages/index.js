@@ -454,13 +454,13 @@ export default function Home() {
 
           <div className="w-full sm:w-1/2 md:w-1/3  xl:1/4 p-1 pt-20 ">
             <div className=' border-2 mt-4'>
-              <div className='flex px-3 py-2 space-x-4 space-y-8'>
+              <div className='flex px-3 py-2 space-x-4 space-y-12'>
 
                 <div>
                   <h1 className='text-left text-3xl text-[#1E4755]' >CONTACT DETAILS</h1>
                   <span className=' w-[4rem]  h-0.5 pt-0 bg-orange-600 inline-block'></span>
                   <p className='py-2'>Please find the below contact details and contact us today!</p>
-                  <div className='py-4'>
+                  <div className='py-2'>
                     <Image
                       src="/assets/sms.png"
                       width={30}
