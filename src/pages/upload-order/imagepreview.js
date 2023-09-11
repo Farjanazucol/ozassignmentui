@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react'
 
 function Imagepreview({file}) {
@@ -16,7 +17,7 @@ function Imagepreview({file}) {
 
   return (
     <div>
-        {preview ? <Image src={preview} width={50} height={50} />  : "loading"  } 
+        {preview ? <Image src={preview} width={50} height={50} alt='preview' />  : "loading"  } 
         
     </div>
   )
