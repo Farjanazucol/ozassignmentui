@@ -454,7 +454,7 @@ export default function Home() {
 
           <div className="w-full sm:w-1/2 md:w-1/3  xl:1/4 p-1 pt-20 ">
             <div className=' border-2 mt-4'>
-              <div className='flex px-3  mt-4 py-2 space-x-4 space-y-12'>
+              <div className='flex px-3  mt-4 py-0 space-x-4 space-y-12'>
 
                 <div>
                   <h1 className='text-left text-3xl text-[#1E4755]' >CONTACT DETAILS</h1>
