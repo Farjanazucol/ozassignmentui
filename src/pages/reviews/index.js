@@ -116,7 +116,7 @@ const loadMore = () => {
             <div className="w-full sm:w-1/2 xs:w-full  md:w-1/2  xl:w-2/3 p-4 ">
           <div>
            
-            <h1 className=' font-extrabold text-4xl leading-[3rem] text-[#1E4755]' >MyAssignmentHelp  <span >  Review</span><br/></h1>
+            <h1 className=' font-extrabold text-3xl leading-[3rem] text-[#1E4755]' >MyAssignmentHelp  <span >  Review</span><br/></h1>
             <div className="flex ">
             <p className='text-base leading-8  md:w-[100%] sm:w-[100%] pt-9 font-medium' style={{ color: "#1E4755" }} >Still in Two Minds? The Proof is in Numbers !
 38983 genuine reviews with a rating of 4.9/5.
@@ -237,9 +237,11 @@ User ID:
               </div>
            ))}
              
-             <button onClick={loadMore}>Load More</button>
-            </div>
            
+            </div>
+            <div className='text-center mt-16 '>
+         <button className='  items-center text-center rounded-md bg-orange-600 px-3.5 py-2.5 text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500' onClick={loadMore}>Load More...</button>
+         </div>
           {/* </div> */}
 
         </div>

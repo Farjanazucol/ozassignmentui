@@ -42,7 +42,7 @@ export default function Home() {
 
             <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4 ">
               <div>
-                <h1 className=' font-extrabold text-4xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span><br />
+                <h1 className=' font-extrabold text-3xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span><br />
                   <span> Services</span></h1>
                 <p className='text-2xl leading-10 pt-5 font-bold opacity-80' style={{ color: "#1E4755" }} >Solving queries around all things “assignments”
                 </p>
@@ -454,7 +454,7 @@ export default function Home() {
 
           <div className="w-full sm:w-1/2 md:w-1/3  xl:1/4 p-1 pt-20 ">
             <div className=' border-2 mt-4'>
-              <div className='flex px-3 py-6 space-x-4 space-y-8'>
+              <div className='flex px-3 py-2 space-x-4 space-y-8'>
 
                 <div>
                   <h1 className='text-left text-3xl text-[#1E4755]' >CONTACT DETAILS</h1>
@@ -506,7 +506,7 @@ export default function Home() {
                 </div>
 
                 <div className=" sm:mt-6  items-center text-center">
-                  <button type="submit" className="  rounded-md  bg-orange-500 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-10 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400" onClick={UploadDocumentPage}>Submit Request</button>
+                  <button type="submit" className="  rounded-md  bg-orange-600 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-10 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500" onClick={UploadDocumentPage}>Submit Request</button>
 
                 </div>
               </form>

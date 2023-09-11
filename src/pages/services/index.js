@@ -101,7 +101,7 @@ function Services() {
     <BiChevronDown className='w-6 h-6 text-[#1E4755]' />
   </span>
 </div>
-<ul className="bg-white  min-h-[600px] min-w-[30px] rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top  z-50 text-sm   ">
+<ul className="bg-[#f9f9f9]  min-h-[600px] min-w-[30px] rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top  z-50 text-sm   ">
   {servicesData.map((object, i) => (
     <li key={i.id} className="rounded-sm py-1 px-3 hover:bg-gray-100">
       <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
@@ -112,10 +112,10 @@ function Services() {
        
         <BiChevronUp className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
       </button>
-      <ul className="bg-white min-h-[600px] min-w-[30px] rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
+      <ul className="bg-[#f8fcfc] min-h-[600px] max-lg:w-50 rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
         {object.children.map((child) => (
-          <li key={child.id} className="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-            <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
+          <li key={child.id} className="rounded-sm w-full   relative px-3 py-1 hover:bg-gray-100">
+            <button className="text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
              
               <Link href={'services/' + child.slug + "/"}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
                     <span className="pr-1 flex-1">{child.title}</span>
@@ -123,13 +123,13 @@ function Services() {
                   </Link>
               <BiChevronUp className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
             </button>
-            <ul className="bg-white min-h-[600px]  rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
+            <ul className="bg-white min-h-[600px] w-96 rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
              
               {child.children.map((grandchild, i) => (
-                <li key={grandchild.id} className="rounded-sm relative px-0 py-1 hover:bg-gray-100">
+                <li key={grandchild.id} className="rounded-sm relative px-3 py-1 hover:bg-gray-100 grid-cols-3">
                   <Link href={'services/' + grandchild.slug + "/"}  key={i}  className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
                     <span className="flex-1">{grandchild.title}</span>
-                   
+                   {/* <BiChevronRight className='w-6 h-6 text-[#1E4755] hover:text-orange-500' /> */}
                   </Link>
                 </li>
               ))}

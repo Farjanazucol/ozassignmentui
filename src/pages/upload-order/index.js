@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useRef} from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
@@ -23,6 +23,7 @@ function UploadDocument() {
   const router = useRouter()
   const [timezones, setTimezones] = useState([]);
   
+  const fileRef = useRef(null);
 
 
   const [formData, setFormData] = useState({
@@ -34,8 +35,8 @@ function UploadDocument() {
     contact_no: '',
     deadline_hard: '',
     word:'',
-    description: ''
-   
+    description: '',
+   file:''
 
 
   });
@@ -49,7 +50,7 @@ function UploadDocument() {
     word: '',
     deadline_hard: '',
     select: '',
-    file: null,
+    file: [],
   };
 
   const validationSchema = Yup.object().shape({
@@ -94,44 +95,7 @@ function UploadDocument() {
 
  
 
-  // const onSubmit = async () => {
-  //   // e.preventDefault();
-  //  //`${CONSTANTS.NGROK_URL}api/v1/user/upload/`,
-  //   setLoading(true);
-  //   console.log
-  //   try {
-     
-  //   const response = await fetch(` https://7986-2401-4900-1c54-f63d-ffa5-f1f5-14e7-5b55.ngrok-free.app/task/api/upload/`, {
-  //     method: 'POST',
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(formData),
-  //   });
-
-  //   if (response.ok) {
-      
-  //     console.log("Message sent successfully");
-
-  //     setLoading(false);
-
-  //     reset(); // Reset the form
-
-  //   } 
-  //   else {
-
-  //     console.error('Form submission failed');
-
-  //     setLoading(false);
-  //   }
-  // }
-
-  // catch (error) 
-  // {
-  //   console.error('Error sending form data:', error);
-  // }
-  // }
-
+  
  const formik = useFormik({
       initialValues,
       validationSchema,
@@ -145,6 +109,7 @@ function UploadDocument() {
         formDataToSend.append('word', values.word);
         formDataToSend.append('timezone', values.select);
         formDataToSend.append('deadline_hard', values.deadline_hard);
+        formDataToSend.append('file', values.file);
 
         try{
           const response = await axios.post(
@@ -494,12 +459,19 @@ function UploadDocument() {
               <h1 className="text-gray-800 font-medium text-2xl py-4 ">
                 Add File
               </h1>
-              <label className="relative bg-red-500 px-2 py-4 rounded-sm text-white text-center cursor-pointer">
+              <label className="relative  items-center text-center rounded-md bg-orange-600 px-3.5 py-4 text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500rounded-sm cursor-pointer">
+             
                 <span className="px-2 text-lg">+ Select files...</span>
                 <input
                   type="file"
                   name="file"
                   id="file"
+                  // onClick={()=>fileRef.currebt.click()}
+         
+          accept=".jpg, .jpeg, .png, .gif, .pdf, .text"  // Specify allowed file types
+              
+                  ref={fileRef} 
+                  multiple
                   className="absolute inset-0 opacity-0 cursor-pointer"
                   onChange={(event) => {
                     formik.setFieldValue('file', event.currentTarget.files[0]);
@@ -516,23 +488,21 @@ function UploadDocument() {
                         <p className="text-gray-800 pr-8 text-sm/[17px] ">
                           Drop file here
                         </p>
-                        <input
-                          id="file-upload"
-                          name="file-upload"
-                          type="file"
-                          className="relative focus:ring-white focus:border-transparent focus:border-white"
-                        />
+                        
                       </label>
                     </div>
                   </div>
                 </div>
-              {/* {formik.errors.file && formik.touched.file && (
-                <p className="text-red-500 text-sm mt-1">{formik.errors.file}</p>
-              )} */}
-              {/* Rest of your form */}
+
+                {formik.values.file && (
+        <div>
+        {formik.values.file.name}
+        </div>
+      )}
+             
             </div>
             <div className="flex justify-center lg:justify-center xl:justify-center sm:justify-center md:justify-center">
-              <button className="bg-red-500 text-white px-10 py-2 mt-10">
+              <button className=" items-center text-center rounded-md bg-orange-600  text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 px-10 py-4 mt-10">
                 UPLOAD!
               </button>
             </div>

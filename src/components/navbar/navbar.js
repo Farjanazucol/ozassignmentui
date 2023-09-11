@@ -18,21 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Services from "@/pages/services";
 import { useRouter } from "next/router";
-// import Services from "@/pages/services";
 
-// const products = [
-//   {
-//     name: "Analytics",
-//     description: "Get a better understanding of your traffic",
-//     href: "#",
-//     icon: ChartPieIcon,
-//   },
- 
-// ];
-// const callsToAction = [
-//   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-//   { name: "Contact sales", href: "#", icon: PhoneIcon },
-// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -104,7 +90,8 @@ export default function Example() {
                 <div className="px-5  max-sm:hidden max-xs:hidden">
                   <Link
                     className=" flex text-base font-medium"
-                    href="https://www.ozassignments.com/"
+                    // href="https://www.ozassignments.com/"
+                    href="mailto:support@ozassignments.com"
                     target="_blank"
                     style={{ color: "#1E4755" }}
                   >
@@ -259,7 +246,7 @@ export default function Example() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               href={"/upload-order"}
-              className="text-white px-2 py-3 text-base mb-8 font-normal  rounded-xl bg-orange-400 text-center  shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              className=" px-2 py-3  mb-8  items-center text-center rounded-md bg-orange-600  text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 "
             >
               Upload Documents
             </Link>
