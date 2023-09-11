@@ -111,7 +111,7 @@ function Blogs({data}) {
                     </span>
                     </Link>
                   </div>
-                  <p className='text-normal text-gray-500 md: py-0 lg:py-8 xl:py-8 md:w-[100%] lg:w-[65%] xl:w-[65%]'>{object.seo_description}</p>
+                  <p className='text-normal text-gray-500 md: py-0 lg:py-8 xl:py-4 md:w-[100%] lg:w-[65%] xl:w-[100%]'>{object.seo_description}</p>
 
                 </div>
               ))}
