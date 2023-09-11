@@ -88,7 +88,7 @@ function Services() {
 
 <div className="group inline-block">
 <div
- className={`py-2 text-base font-normal leading-6  outline-none focus:outline-none  px-3  bg-white rounded-sm flex items-center  font-normal${
+ className={`py-2 text-base font-normal leading-6  outline-none focus:outline-none   bg-white rounded-sm flex items-center  font-normal${
   activeLink === '/services' ? 'text-[#1E4755] hover:border-b-2 hover:border-orange-600 pb-1' : 'text-[#1E4755]'
 }`}
 // onClick={() => handleLinkClick('/services')}

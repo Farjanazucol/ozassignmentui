@@ -22,7 +22,9 @@ body{
     font-family: 'sharp', 'sans-serif';
 } */
 
-
+select {
+  text-transform: none;
+  border: 1px solid;}
 
 label {
   top: 0%;
@@ -71,14 +73,14 @@ img{
   display:inline
 }
 
-input{
+/* input{
   border-top: none;
   border-left: none;
   border-right: none;
   border-color: gray !important;
   border-radius: 0 !important;
 
-}
+} */
 
 
 

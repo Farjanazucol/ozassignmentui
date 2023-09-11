@@ -75,7 +75,7 @@ export default function Example() {
                   <Link
                     className=" flex text-base font-medium text-[#1E4755]"
                     target="_blank"
-                    href="tel: +61482082009"
+                    href="tel:+61482082009"
                   >
                     <Image
                       src="/assets/call.png"
@@ -84,7 +84,7 @@ export default function Example() {
                       className="px-1"
                       alt="call"
                     />
-                     +61482082009
+                    +61482082009
                   </Link>
                 </div>
                 <div className="px-5  max-sm:hidden max-xs:hidden">

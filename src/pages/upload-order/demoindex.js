@@ -1,12 +1,16 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useRef} from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
 import Head from "next/head";
 import CONSTANTS from "@/components/constants";
+import * as Yup from 'yup';
+import { useFormik ,Field} from 'formik';
+import axios from "axios";
 
+import { DatePicker,  } from 'rsuite';
 
 
 
@@ -16,8 +20,10 @@ import CONSTANTS from "@/components/constants";
 
 function UploadDocument() {
 
+  const router = useRouter()
   const [timezones, setTimezones] = useState([]);
   
+  const fileRef = useRef(null);
 
 
   const [formData, setFormData] = useState({
@@ -29,11 +35,38 @@ function UploadDocument() {
     contact_no: '',
     deadline_hard: '',
     word:'',
-    description: ''
-   
+    description: '',
+   file:''
 
 
   });
+
+  const initialValues = {
+    name: '',
+    email: '',
+    contact: '',
+    title: '',
+    description: '',
+    word: '',
+    deadline_hard: '',
+    select: '',
+    file: [],
+  };
+
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required('Full Name is required'),
+    email: Yup.string().required('Email is required').email('Invalid email address'),
+    contact: Yup.string().required('Contact No is required')
+    .matches(/^[0-9]*$/, 'Contact number must contain only digits')
+    .min(10, 'Phone number must be 10 digits')
+    .max(12, 'Phone number must be 12 digits'),
+    title: Yup.string().required('Service type is required'),
+    
+    description: Yup.string().required('Description is required'),
+    deadline_hard: Yup.date().required('Date  is required')
+  });
+
+  
 
 
   const {
@@ -47,15 +80,9 @@ function UploadDocument() {
 
  
 
-    // Create a function to update the form data state when input fields change
-    const handleChange = (e) => {
-      console.log("setting data", e)
-      const { name, value } = e.target;
-      setFormData({ ...formData, [name]: value });
-    };
 
   useEffect(() => {
-    // Fetch the timezone data from your API or external source
+  
     fetch('https://www.ozassignments.com/oz/api/timezones')
       .then((response) => response.json())
       .then((data) => {
@@ -71,43 +98,41 @@ function UploadDocument() {
 
  
 
-  const onSubmit = async () => {
-    // e.preventDefault();
-   //`${CONSTANTS.NGROK_URL}api/v1/user/upload/`,
-    setLoading(true);
-    console.log("formData", formData)
-    try {
-     
-    const response = await fetch(` https://7986-2401-4900-1c54-f63d-ffa5-f1f5-14e7-5b55.ngrok-free.app/task/api/upload/`, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+  
+ const formik = useFormik({
+      initialValues,
+      validationSchema,
+      onSubmit: async(values) => {
+        const formDataToSend = new FormData();
+        formDataToSend.append('first_name', values.name);
+        formDataToSend.append('email', values.email);
+        formDataToSend.append('contact_no', values.contact);
+        formDataToSend.append('title', values.title);
+        formDataToSend.append('description', values.description);
+        formDataToSend.append('word', values.word);
+        formDataToSend.append('timezone', values.select);
+        formDataToSend.append('deadline_hard', values.deadline_hard);
+        formDataToSend.append('file', values.file);
 
-    if (response.ok) {
-      
-      console.log("Message sent successfully");
+        try{
+          const response = await axios.post(
+            "https://ecc3-2401-4900-1c54-f63d-6d8d-d2e-f30f-354d.ngrok-free.app/task/api/upload/",
+            formDataToSend,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          let responseData = response.data
+          console.log("I am rtwe repsone", responseData)
+          router.push("/thankyou")
 
-      setLoading(false);
-
-      reset(); // Reset the form
-
-    } 
-    else {
-
-      console.error('Form submission failed');
-
-      setLoading(false);
-    }
-  }
-
-  catch (error) 
-  {
-    console.error('Error sending form data:', error);
-  }
-  }
+        }catch(error){
+          console.log("I am ewrror", error)
+        }
+        console.log(values);
+      }})
 
   return (
     <>
@@ -126,19 +151,19 @@ function UploadDocument() {
           <div className="flex flex-wrap  -mx-4">
             <div className="w-full sm:w-1/2 md:w-1/2  xl:w-1/2 p-4 ">
               <div>
-                <h1 className=" font-extrabold text-5xl leading-[3rem] text-[#1E4755]">
+                <h1 className=" font-extrabold text-4xl leading-[3rem] text-[#1E4755]">
                   Upload Your{" "}
                   <span className="text-orange-400 "> Assignment</span>
                   <br />
                 </h1>
                 <p
-                  className="text-2xl leading-10 pt-5 font-bold opacity-80"
+                  className="text-xl leading-10 pt-5 font-bold opacity-80"
                   style={{ color: "#1E4755" }}
                 >
                   Solving queries around all things “assignments”
                 </p>
                 <p
-                  className="text-xl leading-8 max-w-xl pt-9 font-medium"
+                  className="text-base leading-8 max-w-lg pt-9 font-medium"
                   style={{ color: "#1E4755" }}
                 >
                   Facing trouble with giving your assignments a final touch? We
@@ -162,353 +187,301 @@ function UploadDocument() {
 
       <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1">
         <div className="flex flex-wrap">
-          <div className="w-full sm:w-1/2 md:w-2/3  xl:w-1/2 p-4 ">
-            <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-              <h1 className="text-blue-500 font-medium text-2xl pb-12">
-                Personal Details
-              </h1>
-              <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="inline-full-name"
-                  >
-                    Full Name:
-                  </label>
-                </div>
-                <div className="md:w-9/12">
-                  <Controller
-                    name="name"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: "Full Name is required",
-                    }}
-                    render={({ field }) => (
-                      <input
-                      type="text"
-                      name="first_name"
-                      value={formData.first_name}
-                      onChange={handleChange}
-                        {...field}
-                        placeholder="Enter Full Name"
-                        className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
-                          errors.name ? "border-red-500" : ""
-                        }`}
-                      />
-                    )}
-                  />
-                  {errors.name && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.name.message}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="email"
-                  >
-                    Email:
-                  </label>
-                </div>
-
-                <div className="md:w-9/12">
-                  <Controller
-                    name="email"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: "Email is required",
-                    }}
-                    render={({ field }) => (
-                      <input
-                      type="text"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                        {...field}
-                      
-                        placeholder="Enter Email"
-                        className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
-                          errors.email ? "border-red-500" : ""
-                        }`}
-                      />
-                    )}
-                  />
-                  {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.email.message}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <div className="md:flex md:items-center mb-10">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="contact"
-                  >
-                    Contact No:
-                  </label>
-                </div>
-
-                <div className="md:w-9/12">
-                  <Controller
-                    name="contact"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: "Number is required",
-                    }}
-                    render={({ field }) => (
-                      <input
-                      type="text"
-                      name="contact_no"
-                      value={formData.contact_no}
-                      onChange={handleChange}
-                        {...field}
-                       
-                        placeholder="Enter Number"
-                        className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
-                          errors.contact ? "border-red-500" : ""
-                        }`}
-                      />
-                    )}
-                  />
-                  {errors.contact && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.contact.message}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <hr />
-
-              <h1 className="text-blue-500 font-medium text-2xl py-12">
-                Assignment Details
-              </h1>
-              <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="title"
-                  >
-                    Title:
-                  </label>
-                </div>
-
-
-                <div className="md:w-9/12">
-                  <Controller
-                    name="title"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: "Title is required",
-                    }}
-                    render={({ field }) => (
-                      <input
-                      type="text"
-                      name="title"
-                      value={formData.title}
-                      onChange={handleChange}
-                        {...field}
-                        placeholder="Enter Assignment Title"
-                        className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
-                          errors.title ? "border-red-500" : ""
-                        }`}
-                      />
-                    )}
-                  />
-                  {errors.title && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.title.message}
-                    </p>
-                  )}
-                </div>
-             
-              </div>
-              <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="description"
-                  >
-                    Description:
-                  </label>
-                </div>
-
-                {/* <div className="md:w-9/12">
-              <Controller
-                name="description"
-                control={control}
-                defaultValue=""
-                rules={{
-                  required: "Description is required",
-                }}
-                render={({ field }) => (
-                  <textarea
-                    {...field}
-                    type="text"
-                    placeholder="Enter Some Description"
-                    className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  h-20  w-full pt-6 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white  bg-white border py-2   " ${
-                      errors.description ? "border-red-500" : ""
-                    }`}
-                  ></textarea>
-                )}
-              />
-              {errors.description && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.description.message}
-                </p>
-              )}
-            </div> */}
-
-                <div className="md:w-9/12">
-                  <textarea
-                  
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    placeholder="Enter Some Description"
-                    className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  h-20  w-full pt-6 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white  bg-white border py-2   "
-                  ></textarea>
-                </div>
-              </div>
-              <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="words"
-                  >
-                    Words:
-                  </label>
-                </div>
-                <div className="md:w-9/12">
-                    <input
-                     name="word"
-                    value={formData.word}
-                    onChange={handleChange}
-                    
-                      type="number"
-                      placeholder="Enter Word Count"
-                      className="hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2 text-gray-800  leading-6 focus:outline-none focus:bg-white focus:border-white"
-                     
-                     
-                    />
-                  </div>
-               
-              </div>
-              <div className="md:flex md:items-center mb-6">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="deadline"
-                  >
-                    Deadline:
-                  </label>
-                </div>
-
-                <div className="md:w-9/12">
-                  <Controller
-                    name="date"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: "Date is required",
-                    }}
-                    render={({ field }) => (
-                      <input
-                      
-                      name="deadline_hard"
-                      value={formData.contact_no}
-                      onChange={handleChange}
-                     
-                        {...field}
-                        type="date"
-                        formate="YYYY-MM-DDThh:mm[:ss[.uuuuuu]][+HH:MM|-HH:MM|Z]"
-                        placeholder="Deadline"
-                        className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400  w-full py-2  text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
-                          errors.date ? "border-red-500" : ""
-                        }`}
-                      />
-                    )}
-                  />
-                  {errors.date && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.date.message}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <div className="md:flex md:items-center mb-10">
-                <div className="md:w-1/3">
-                  <label
-                    className="block text-gray-800 text-xl font-normal md:text-right mb-0 mt-4 md:mb-0 pr-4"
-                    htmlFor="timezone"
-                  >
-                    TimeZone:
-                  </label>
-                </div>
-
-               
-                <div className="md:w-9/12">
-                  <Controller
-                    name="select"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: "Select is required",
-                    }}
-                    render={({ field }) => (
-                      <select
-                        {...field}
-                        placeholder="Asia/Kolkata"
-                        className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-500 bg-white border   w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
-                          errors.select ? "border-red-500" : ""
-                        }`}
-                      >
-                        {/* Render options dynamically from the 'timezones' state */}
-        {timezones.map((timezone) => (
-          <option key={timezone} value={timezone}>
-            {timezone}
-          </option>
-        ))}
-                      </select>
-                    )}
-                  />
-                  {errors.select && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.select.message}
-                    </p>
-                  )}
-                </div>
-              </div>
-              <hr />
-
-              <div className="col-span-full py-3">
-                <h1 className="text-gray-800 font-medium text-2xl py-4 ">
-                  Add File
-                </h1>
-
-                <label className="relative bg-red-500 px-2 py-4 rounded-sm text-white text-center cursor-pointer">
-                  <span className="px-2  text-xl">+ Select files...</span>
-
-                  <input
-                  
-                    type="file"
-                    name="input"
-                    id="file"
-                    className="absolute inset-0 opacity-0 cursor-pointer"
-                    // onchange="handleFileChange(this)"
-                    value={formData.file}
-                    onChange={handleChange}
-                  />
+          <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4 ">
+          <form className="w-full" onSubmit={formik.handleSubmit}>
+            <h1 className="text-blue-500 font-medium text-2xl pb-12">
+              Personal Details
+            </h1>
+            <div className="md:flex md:items-center mt-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                  Full Name:
                 </label>
-                <div className="mt-6 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="text"
+                  name="name"
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="Enter Full Name"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 mt-[1.6rem]border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.name && formik.touched.name
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.name && formik.touched.name && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.name}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <div className="md:flex md:items-center mt-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                  Email:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="text"
+                  name="email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="Enter Email"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 mt-[1.6rem]border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.email && formik.touched.email
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.email && formik.touched.name && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.email}
+                  </span>
+                )}
+              </div>
+            </div>
+
+
+
+            <div className="md:flex md:items-center mt-6 mb-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                   Contact No:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="text"
+                  name="contact"
+                  value={formik.values.contact}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="Enter Number"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 mt-[1.6rem]border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.contact && formik.touched.contact
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.contact && formik.touched.contact && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.contact}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <hr />
+
+<h1 className="text-blue-500 font-medium text-2xl py-12">
+  Assignment Details
+</h1>
+            <div className="md:flex md:items-center mt-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                  Service Type:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="text"
+                  name="title"
+                  value={formik.values.title}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="Enter service type or document type"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.title && formik.touched.title
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.title && formik.touched.title && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.title}
+                  </span>
+                )}
+              </div>
+            </div>
+
+
+
+            <div className="md:flex md:items-center mt-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                  Description:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="text"
+                  name="description"
+                  value={formik.values.description}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="Enter description about your requirement"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-40 w-full    border-1 py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.description && formik.touched.description
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.description && formik.touched.description && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.description}
+                  </span>
+                )}
+              </div>
+            </div>
+
+
+
+            <div className="md:flex md:items-center mt-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                 Words:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="number"
+                  name="word"
+                  value={formik.values.word}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="Enter no of words required to edit  or proofread"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.word && formik.touched.word
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.word && formik.touched.word && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.word}
+                  </span>
+                )}
+              </div>
+            </div>
+
+
+
+            <div className="md:flex md:items-center mt-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                  Deadline:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+                <input
+                  type="datetime-local"
+                  name="deadline_hard"
+                  value={formik.values.deadline_hard}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder="YYYY-MM-DD-HR-MIN"
+                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                    formik.errors.deadline_hard && formik.touched.deadline_hard
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                  {/* <DatePicker  editable={true} /> */}
+                {formik.errors.deadline_hard && formik.touched.deadline_hard && (
+                  <span className="text-red-500 text-sm mt-1">
+                    {formik.errors.deadline_hard}
+                  </span>
+                )}
+              </div>
+            </div>
+
+
+            <div className="md:flex md:items-center mt-6 mb-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  htmlFor="inline-full-name"
+                >
+                  TimeZone:
+                </label>
+              </div>
+              <div className="md:w-7/12">
+          <select
+            id="select"
+            name="select"
+            {...formik.getFieldProps('select')}
+            placeholder="Asia/Kolkata"
+            className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-500 bg-white border w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+              formik.touched.select && formik.errors.select ? 'border-red-500' : ''
+            }`}
+          >
+            {/* Render options dynamically from the 'timezones' state */}
+            {timezones.map((timezone) => (
+              <option key={timezone} value={timezone}>
+                {timezone}
+              </option>
+            ))}
+          </select>
+          {formik.touched.select && formik.errors.select && (
+            <span className="text-red-500 text-sm mt-1">{formik.errors.select}</span>
+          )}
+        </div>
+            
+            </div>
+            <hr />
+            {/* Repeat similar code blocks for other form fields */}
+            <div className="col-span-full py-3">
+              <h1 className="text-gray-800 font-medium text-2xl py-4 ">
+                Add File
+              </h1>
+              <label className="relative  items-center text-center rounded-md bg-orange-600 px-3.5 py-4 text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500rounded-sm cursor-pointer">
+             
+                <span className="px-2 text-lg">+ Select files...</span>
+                <input
+                  type="file"
+                  name="file"
+                  id="file"
+                  // onClick={()=>fileRef.currebt.click()}
+         
+          accept=".jpg, .jpeg, .png, .gif, .pdf, .text"  // Specify allowed file types
+              
+                  ref={fileRef} 
+                  multiple
+                  className="absolute inset-0 opacity-0 cursor-pointer"
+                  onChange={(event) => {
+                    formik.setFieldValue('file', event.currentTarget.files[0]);
+                  }}
+                />
+              </label>
+              <div className="mt-6 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                   <div className="text-center">
                     <div className="mt-4 flex text-sm leading-6 text-gray-600">
                       <label
@@ -518,26 +491,28 @@ function UploadDocument() {
                         <p className="text-gray-800 pr-8 text-sm/[17px] ">
                           Drop file here
                         </p>
-                        <input
-                          id="file-upload"
-                          name="file-upload"
-                          type="file"
-                          className="relative focus:ring-white focus:border-transparent focus:border-white"
-                        />
+                        
                       </label>
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-center lg:justify-center xl:justify-center  sm:justify-center md:justify-center">
-                  <button className=" bg-red-500 text-white px-10 py-2 mt-10 ">
-                    UPLOAD!
-                  </button>
-                </div>
-              </div>
-            </form>
+
+                {formik.values.file && (
+        <div>
+        {formik.values.file.name}
+        </div>
+      )}
+             
+            </div>
+            <div className="flex justify-center lg:justify-center xl:justify-center sm:justify-center md:justify-center">
+              <button className=" items-center text-center rounded-md bg-orange-600  text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 px-10 py-4 mt-10">
+                UPLOAD!
+              </button>
+            </div>
+          </form>
           </div>
 
-          <div className="w-full sm:w-1/1 md:w-1/3  xl:w-1/2 sm:px-8 xl:px-0 lg:px-0 p-6">
+          <div className=" sm:px-8 xl:px-0 lg:px-0  w-full  md:w-1/2 xl:w-1/3 p-4  ">
             <div className="border-2 shadow-md pl-0 ">
               <div className="text-left sm:py-4 md:py-4 xl:py-4 xs:px-custom space-x-4 sm:px-4 md:px-4 xl:px-4 lg:px-4">
                 <p className="font-bold text-blue-500 space-x-4 py-4">
@@ -546,7 +521,7 @@ function UploadDocument() {
                   <span className=" space-x-4 w-16  h-0.5 -mt-16 bg-black  inline-block"></span>
                 </p>
 
-                <Link href={""} className="text-xl mt-16">
+                <Link href={""} className="text-lg mt-16">
                   Offer 1
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">
@@ -556,7 +531,7 @@ function UploadDocument() {
                   <li>20% discount on 4 Assignments</li>
                 </ul>
 
-                <Link href={""} className="text-xl mt-16">
+                <Link href={""} className="text-lg mt-16">
                   Offer 2
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">
@@ -564,7 +539,7 @@ function UploadDocument() {
                   <li> 25% discount on 10 or more Assignments</li>
                   <li> 30% discount on 16 or more Assignments</li>
                 </ul>
-                <Link href={""} className="text-xl mt-16">
+                <Link href={""} className="text-lg mt-16">
                   Offer 3
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">
@@ -575,7 +550,7 @@ function UploadDocument() {
                     to order with us and get one assignment free.
                   </li>
                 </ul>
-                <Link href={""} className="text-xl mt-16">
+                <Link href={""} className="text-lg mt-16">
                   Offer 4
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">

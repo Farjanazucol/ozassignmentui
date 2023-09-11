@@ -192,10 +192,10 @@ function UploadDocument() {
             <h1 className="text-blue-500 font-medium text-2xl pb-12">
               Personal Details
             </h1>
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex  mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 mt-[1rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Full Name:
@@ -209,24 +209,26 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Enter Full Name"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.name && formik.touched.name
                       ? "border-red-500"
                       : ""
                   }`}
                 />
                 {formik.errors.name && formik.touched.name && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-sm">
                     {formik.errors.name}
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="md:flex md:items-center mb-6">
+
+
+            <div className="md:flex mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal mt-[1rem]  md:text-right mb-0  md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Email:
@@ -240,7 +242,7 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Enter Email"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.email && formik.touched.email
                       ? "border-red-500"
                       : ""
@@ -256,10 +258,10 @@ function UploadDocument() {
 
 
 
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex md:items-center mt-6 mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 mt-[1rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                    Contact No:
@@ -273,7 +275,7 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Enter Number"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.contact && formik.touched.contact
                       ? "border-red-500"
                       : ""
@@ -292,10 +294,10 @@ function UploadDocument() {
 <h1 className="text-blue-500 font-medium text-2xl py-12">
   Assignment Details
 </h1>
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex md:items-center mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 mt-[1rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Service Type:
@@ -309,7 +311,7 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Enter service type or document type"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.title && formik.touched.title
                       ? "border-red-500"
                       : ""
@@ -325,10 +327,10 @@ function UploadDocument() {
 
 
 
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex md:items-center mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 -mt-[2.2rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Description:
@@ -342,14 +344,14 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Enter description about your requirement"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full min-h-[10rem] py-1 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 pb-20 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.description && formik.touched.description
                       ? "border-red-500"
                       : ""
                   }`}
                 />
                 {formik.errors.description && formik.touched.description && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-base mt-1">
                     {formik.errors.description}
                   </p>
                 )}
@@ -358,10 +360,10 @@ function UploadDocument() {
 
 
 
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex md:items-center mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 mt-[1rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                  Words:
@@ -375,14 +377,14 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="Enter no of words required to edit  or proofread"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.word && formik.touched.word
                       ? "border-red-500"
                       : ""
                   }`}
                 />
                 {formik.errors.word && formik.touched.word && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-base mt-1">
                     {formik.errors.word}
                   </p>
                 )}
@@ -391,10 +393,10 @@ function UploadDocument() {
 
 
 
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex md:items-center mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 mt-[1rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Deadline:
@@ -408,7 +410,7 @@ function UploadDocument() {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="YYYY-MM-DD-HR-MIN"
-                  className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-400 w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+                  className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
                     formik.errors.deadline_hard && formik.touched.deadline_hard
                       ? "border-red-500"
                       : ""
@@ -416,7 +418,7 @@ function UploadDocument() {
                 />
                   {/* <DatePicker  editable={true} /> */}
                 {formik.errors.deadline_hard && formik.touched.deadline_hard && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-base mt-1">
                     {formik.errors.deadline_hard}
                   </p>
                 )}
@@ -424,10 +426,10 @@ function UploadDocument() {
             </div>
 
 
-            <div className="md:flex md:items-center mb-6">
+            <div className="md:flex md:items-center mt-6 mb-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-lg font-normal md:text-right mb-0 mt-[1.6rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 mt-[1rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   TimeZone:
@@ -439,7 +441,7 @@ function UploadDocument() {
             name="select"
             {...formik.getFieldProps('select')}
             placeholder="Asia/Kolkata"
-            className={`hover:shadow-md appearance-none border-t-0 border-l-0 border-r-0 border-b-gray-500 bg-white border w-full py-2 text-gray-800 leading-6 focus:outline-none focus:bg-white focus:border-white ${
+            className={`hover:shadow-md appearance-none border-1 w-full py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 bg-white border-gray-200 focus:border-gray-200 ${
               formik.touched.select && formik.errors.select ? 'border-red-500' : ''
             }`}
           >
@@ -464,7 +466,7 @@ function UploadDocument() {
               </h1>
               <label className="relative  items-center text-center rounded-md bg-orange-600 px-3.5 py-4 text-base font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500rounded-sm cursor-pointer">
              
-                <span className="px-2 text-lg">+ Select files...</span>
+                <span className="px-2 text-base">+ Select files...</span>
                 <input
                   type="file"
                   name="file"
@@ -521,7 +523,7 @@ function UploadDocument() {
                   <span className=" space-x-4 w-16  h-0.5 -mt-16 bg-black  inline-block"></span>
                 </p>
 
-                <Link href={""} className="text-lg mt-16">
+                <Link href={""} className="text-base mt-16">
                   Offer 1
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">
@@ -531,7 +533,7 @@ function UploadDocument() {
                   <li>20% discount on 4 Assignments</li>
                 </ul>
 
-                <Link href={""} className="text-lg mt-16">
+                <Link href={""} className="text-base mt-16">
                   Offer 2
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">
@@ -539,7 +541,7 @@ function UploadDocument() {
                   <li> 25% discount on 10 or more Assignments</li>
                   <li> 30% discount on 16 or more Assignments</li>
                 </ul>
-                <Link href={""} className="text-lg mt-16">
+                <Link href={""} className="text-base mt-16">
                   Offer 3
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">
@@ -550,7 +552,7 @@ function UploadDocument() {
                     to order with us and get one assignment free.
                   </li>
                 </ul>
-                <Link href={""} className="text-lg mt-16">
+                <Link href={""} className="text-base mt-16">
                   Offer 4
                 </Link>
                 <ul className="leading-8 py-4   text-normal opacity-70">

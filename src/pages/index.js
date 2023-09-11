@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import * as Yup from 'yup';
 import Link from 'next/link'
 
 
@@ -8,6 +8,10 @@ import Form from '../components/common/uploadform'
 
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import { useFormik } from 'formik';
+import axios from 'axios';
+import Callback from '@/components/modals/callback';
+import { useState } from 'react';
 
 export default function Home() {
 
@@ -19,6 +23,81 @@ export default function Home() {
     // Use router.push to navigate to the next page
     router.push('/upload-order');
   };
+
+
+
+
+  const initialValues = {
+  
+    email: '',
+    contact: '',
+    description:''
+    
+  };
+
+  const validationSchema = Yup.object().shape({
+   
+    email: Yup.string().required('Email is required').email('Invalid email address'),
+    contact: Yup.string().required('Contact No is required')
+    .matches(/^[0-9]*$/, 'Contact number must contain only digits')
+    .min(10, 'Phone number must be 10 digits')
+    .max(12, 'Phone number must be 12 digits'),
+   
+    description: Yup.string().required('Description is required'),
+    
+  });
+
+
+
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: async(values) => {
+      const formDataToSend = new FormData();
+      
+      formDataToSend.append('email', values.email);
+      formDataToSend.append('contact_number', values.contact);
+      formDataToSend.append('description', values.description)
+
+      
+      try{
+        const response = await axios.post(
+          "https://www.ozassignments.com/oz/api/contact-us",
+          formDataToSend,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        let responseData = response.data
+        console.log("I am rtwe repsone", responseData)
+        // router.push("/callback")
+        openModalA();
+
+      }catch(error){
+        console.log("I am ewrror", error)
+      }
+      console.log(values);
+    }})
+
+
+
+
+
+
+    const [isModalAOpen, setIsModalAOpen] = useState(false);
+
+    const openModalA = () => {
+      setIsModalAOpen(true);
+    };
+  
+    const closeModalA = () => {
+      setIsModalAOpen(false);
+    };
+    
+
 
 
 
@@ -42,7 +121,7 @@ export default function Home() {
 
             <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4 ">
               <div>
-                <h1 className='font-semibold text-3xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span><br />
+                <h1 className='font-semibold text-3xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span>
                   <span> Services</span></h1>
                 <p className='text-2xl leading-10 pt-5 font-bold opacity-80' style={{ color: "#1E4755" }} >Solving queries around all things “assignments”
                 </p>
@@ -486,27 +565,77 @@ export default function Home() {
               <h1 className='text-left font-b text-3xl text-[#1E4755] '>REQUEST FOR <span className='text-orange-600'>CALL BACK</span>
               </h1>
               <span className=' w-[4rem] h-0.5 pt-0 bg-orange-600 inline-block'></span>
-              <form action="#" method="POST" className="mx-auto  max-w-7xl ">
+              <form  className="mx-auto  max-w-7xl " onSubmit={formik.handleSubmit}>
                 <div className=' grid grid-cols-2  py-2 space-x-8'>
 
 
                   <div className="mt-6">
-                    <input type="text" placeholder='Enter Your  Email*' name="email" id="email" autoComplete="given-email" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6" />
+                  <input
+                  type="text"
+                  name="email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder='Enter Your  Email*'
+                  className={`block w-full hover:shadow-md appearance-none border-1 rounded-md py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
+                    formik.errors.email && formik.touched.email
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.email && formik.touched.email && (
+                  <p className="text-red-500 text-sm">
+                    {formik.errors.email}
+                  </p>
+                )}
+                   
                   </div>
 
                   <div className="mt-6 ">
-                    <input type="text" placeholder='Enter Contact Number*' name="number" id="number" autoComplete="given-number" className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6" />
+                  <input
+                  type="text"
+                  name="contact"
+                  value={formik.values.contact}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  placeholder='Enter contact number*'
+                  className={`block w-full hover:shadow-md appearance-none border-1 rounded-md py-2 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200 ${
+                    formik.errors.contact && formik.touched.contact
+                      ? "border-red-500"
+                      : ""
+                  }`}
+                />
+                {formik.errors.contact && formik.touched.contact && (
+                  <p className="text-red-500 text-sm">
+                    {formik.errors.contact}
+                  </p>
+                )}
+                   
                   </div>
 
 
                 </div>
 
                 <div className="mt-6 ">
-                  <textarea type="text" placeholder='Message..*' name="message" id="email" autoComplete="given-email" className="block h-36 w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"></textarea>
+                  <textarea type="text" placeholder='Message..*'  name="description"
+                  value={formik.values.description}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}  className={`block h-36 w-full rounded-md border-0 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6 hover:shadow-md appearance-none border-1 p-2 text-gray-800 leading-6 focus:outline-none focus:bg-gray-50 focus:border-gray-200${
+                    formik.errors.description && formik.touched.description
+                      ? "border-red-500"
+                      : ""
+                  }`}>
+
+                  </textarea>
+                  {formik.errors.description && formik.touched.description && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {formik.errors.description}
+                  </p>
+                )}
                 </div>
 
                 <div className=" sm:mt-6  items-center text-center">
-                  <button type="submit" className="  rounded-md  bg-orange-600 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-10 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500" onClick={UploadDocumentPage}>Submit Request</button>
+                  <button type="submit" className="  rounded-md  bg-orange-600 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-10 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">Submit Request</button>
 
                 </div>
               </form>
@@ -518,7 +647,7 @@ export default function Home() {
         </div>
       </div>
 
-
+      {isModalAOpen && <Callback closeModalA={closeModalA} />}
 
     </>
   )
