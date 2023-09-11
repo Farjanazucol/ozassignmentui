@@ -160,7 +160,7 @@ function UploadDocument() {
                   Solving queries around all things “assignments”
                 </p>
                 <p
-                  className="text-base leading-8 max-w-xl pt-9 font-medium"
+                  className="text-base leading-8 max-w-lg pt-9 font-medium"
                   style={{ color: "#1E4755" }}
                 >
                   Facing trouble with giving your assignments a final touch? We
