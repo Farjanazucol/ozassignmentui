@@ -73,9 +73,9 @@ function Uploadform() {
             method="POST"
             className="mx-auto  max-w-7xl sm:mt-8 lg:mt-8 "
           >
-            <div class="relative px-8 mt-8">
-              <div class="absolute flex border border-transparent  h-full w-10 ">
-                <div class="flex items-center justify-center  rounded-bl z-10 bg-gray-200 text-gray-600 text-lg h-full w-full">
+            <div className="relative px-8 mt-8">
+              <div className="absolute flex border border-transparent  h-full w-10 ">
+                <div className="flex items-center justify-center  rounded-bl z-10 bg-gray-200 text-gray-600 text-lg h-full w-full">
                   <FaUserAlt />
                 </div>
               </div>
@@ -90,9 +90,9 @@ function Uploadform() {
               />
             </div>
 
-            <div class="relative px-8 mt-8">
-              <div class="absolute flex border border-transparent  h-full w-10 ">
-                <div class="flex items-center justify-center  rounded-bl z-10 bg-gray-200 text-gray-600 text-lg h-full w-full">
+            <div className="relative px-8 mt-8">
+              <div className="absolute flex border border-transparent  h-full w-10 ">
+                <div className="flex items-center justify-center  rounded-bl z-10 bg-gray-200 text-gray-600 text-lg h-full w-full">
                   <MdEmail />
                 </div>
               </div>
@@ -106,9 +106,9 @@ function Uploadform() {
                 className="block w-full rounded-md border-0 px-12 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-200 sm:text-sm sm:leading-6"
               />
             </div>
-            <div class="relative px-8 mt-8">
-              <div class="absolute flex border border-transparent  h-full w-10 ">
-                <div class="flex items-center justify-center  rounded-bl z-10 bg-gray-200 text-gray-600 text-lg h-full w-full">
+            <div className="relative px-8 mt-8">
+              <div className="absolute flex border border-transparent  h-full w-10 ">
+                <div className="flex items-center justify-center  rounded-bl z-10 bg-gray-200 text-gray-600 text-lg h-full w-full">
                   <BsTagFill />
                 </div>
               </div>

@@ -102,7 +102,7 @@ function UploadDocument() {
  const formik = useFormik({
       initialValues,
       validationSchema,
-      onSubmit: async(values) => {
+      onSubmit: async(values, { resetForm }) => {
         const formDataToSend = new FormData();
         formDataToSend.append('first_name', values.name);
         formDataToSend.append('email', values.email);
@@ -127,6 +127,7 @@ function UploadDocument() {
           let responseData = response.data
           console.log("I am rtwe repsone", responseData)
           router.push("/thankyou")
+          resetForm()
 
         }catch(error){
           console.log("I am ewrror", error)

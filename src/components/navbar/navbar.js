@@ -18,6 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Services from "@/pages/services";
 import { useRouter } from "next/router";
+import ServicesMobile from "@/pages/mobileview";
 
 
 function classNames(...classes) {
@@ -286,8 +287,8 @@ export default function Example() {
                   
 
                     {/****Dropdown Services*****/}
-                    <div className="-mx-3 block rounded-lg py-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50">
-                    <Services/>
+                    <div className="-mx-3 block rounded-lg py-2 pl-2 text-base font-normal leading-7 text-[#1E4755] hover:bg-gray-50">
+                    <ServicesMobile/>
             
                     </div>
                    

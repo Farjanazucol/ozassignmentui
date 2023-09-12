@@ -2,13 +2,12 @@
 import React from 'react'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+
 import Image from 'next/image'
 
-function Callback() {
-    const [open, setOpen] = useState(true)
-
-    const cancelButtonRef = useRef(null)
+function Callback({ isOpen, closeModal }) {
+    
+    
   
   return (
     <div>
@@ -16,8 +15,9 @@ function Callback() {
 
  
  
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+    <Transition.Root show={isOpen} as={Fragment} onClose={closeModal}   isOpen={isOpen} >
+
+      <Dialog as="div" className="relative z-10">
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -66,8 +66,8 @@ function Callback() {
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-6 py-2 text-base font-normal text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={() => setOpen(false)}
-                    ref={cancelButtonRef}
+                    onClick={closeModal} 
+                   
                   >
                     Close
                   </button>
