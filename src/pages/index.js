@@ -508,7 +508,7 @@ export default function Home() {
 
           <h1 className='text-3xl font-semibold max-sm:pt-8' style={{ color: "#1E4755" }}>Testimonials</h1>
           <div className='items-center text-center'>
-            <span className=' w-1/5  h-0.5 pt-0 bg-orange-600 inline-block'></span>
+            <span className=' w-1/3  h-0.5 pt-0 bg-orange-600 inline-block'></span>
             <br />
             <span className='absolute -mt-3 -ml-6 w-14  h-2 items-center bg-orange-600 inline-block'></span>
           </div>
