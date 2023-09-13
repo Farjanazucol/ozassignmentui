@@ -49,7 +49,7 @@ function ServiceDetails({ service, allServices }) {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <div className='p-4'>Loading...</div>;
   }
 
   return (
@@ -147,7 +147,7 @@ function ServiceDetails({ service, allServices }) {
 </div>
 {/* </div> */}
 </div>  
-<div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
+<div className="mx-auto w-full px-6 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
        
         <div  dangerouslySetInnerHTML={{ __html: service.description }} />
       

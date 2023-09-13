@@ -14,6 +14,7 @@ import axios from 'axios';
 import { useState } from 'react';
 
 import Callback from '@/components/modals/callback';
+import CONSTANTS from '@/components/constants';
 
 export default function Home() {
   
@@ -67,7 +68,8 @@ export default function Home() {
       
       try{
         const response = await axios.post(
-          "https://www.ozassignments.com/oz/api/contact-us",
+          `${CONSTANTS.NGROK_URL}oz/api/contact-us`,
+          
           formDataToSend,
           {
             headers: {
@@ -110,7 +112,7 @@ export default function Home() {
     <>
       <Head>
         <title> OZAssignment Help</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="yes" name="mobile-web-app-capable" />
@@ -392,7 +394,7 @@ export default function Home() {
                 </div>
 
                 <div> <h1 className='text-lg  font-semibold opacity-80  py-2 px-2'>Online Assignment Help</h1></div>
-                <div> <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>MyAssignmenthelp.com is the leading assignment help provider worldwide. We have an exclusive
+                <div> <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>OZ Assignment.com is the leading assignment help provider worldwide. We have an exclusive
                   assignmenthelp
                   service for Indian students who are pursuing their degrees overseas. We have a team of
                   assignment
@@ -421,7 +423,7 @@ export default function Home() {
                 </div>
 
                 <div> <p className='text-lg py-2 px-2 font-semibold opacity-80'>Custom Essay Writing Help</p></div>
-                <div> <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>MyAssignmenthelp.com helps Indian students to compose different types of essays within the
+                <div> <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>OZ Assignment.com helps Indian students to compose different types of essays within the
                   givendeadline.
                   With a highly qualified and experienced group of essay writing experts, we assist the students
                   to
@@ -450,7 +452,7 @@ export default function Home() {
                 </p></div>
                 <div>
                   <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>
-                    Experts, at MyAssignmenthelp.com, are capable of delivering dissertations utilizing both primary and secondary research. We understand that each course has different requirements in terms of research methodologies. This is the reason we assign subject-specific experts who can give you the best idea on whether quantitative and qualitative research is appropriate for you.
+                    Experts, at OZ Assignment.com, are capable of delivering dissertations utilizing both primary and secondary research. We understand that each course has different requirements in terms of research methodologies. This is the reason we assign subject-specific experts who can give you the best idea on whether quantitative and qualitative research is appropriate for you.
                   </p>
                 </div>
 
@@ -477,7 +479,7 @@ export default function Home() {
                 </h1></div>
                 <div>
                   <p className='text-start text-gray-600 texr-base leading-7  py-1 px-4'>
-                    We at MyAssignmenthelp offer all types of online academic services, be it homework help, coursework help, case study help, thesis/research paper writing help and online exam help. And for each service, each subject and each topic, we dedicate a expert writer who has knowledge in that specific field of study. Experience impeccable academic writing service like never before.
+                    We at OZ Assignment.com offer all types of online academic services, be it homework help, coursework help, case study help, thesis/research paper writing help and online exam help. And for each service, each subject and each topic, we dedicate a expert writer who has knowledge in that specific field of study. Experience impeccable academic writing service like never before.
                   </p>
                 </div>
                 <div className=" py-6 items-center text-center">

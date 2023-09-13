@@ -1,4 +1,4 @@
-const NGROK_URL = 'https://www.ozassignments.com/'
+const NGROK_URL = 'https://app.ozassignments.com/'
 
 
 const CONSTANTS = {

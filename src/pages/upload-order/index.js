@@ -7,7 +7,7 @@ import { useForm, Controller } from "react-hook-form";
 import Head from "next/head";
 import CONSTANTS from "@/components/constants";
 import * as Yup from 'yup';
-import { useFormik ,Field} from 'formik';
+import { useFormik } from 'formik';
 import axios from "axios";
 
 import { DatePicker,  } from 'rsuite';
@@ -82,8 +82,8 @@ function UploadDocument() {
 
 
   useEffect(() => {
-  
-    fetch('https://www.ozassignments.com/oz/api/timezones')
+    
+    fetch(`${CONSTANTS.NGROK_URL}oz/api/timezones`)
       .then((response) => response.json())
       .then((data) => {
         setTimezones(data);
@@ -116,7 +116,7 @@ function UploadDocument() {
 
         try{
           const response = await axios.post(
-            "https://ecc3-2401-4900-1c54-f63d-6d8d-d2e-f30f-354d.ngrok-free.app/task/api/upload/",
+            "https://dashboard.locusrags.com/task/api/upload/",
             formDataToSend,
             {
               headers: {
@@ -126,7 +126,7 @@ function UploadDocument() {
           );
           let responseData = response.data
           console.log("I am rtwe repsone", responseData)
-          router.push("/thankyou")
+                    router.push("/upload-done")
           resetForm()
 
         }catch(error){
@@ -139,7 +139,7 @@ function UploadDocument() {
     <>
       <Head>
         <title> OZAssignment - Upload Order</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="yes" name="mobile-web-app-capable" />
@@ -331,7 +331,7 @@ function UploadDocument() {
             <div className="md:flex md:items-center mt-6">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-800 text-base font-normal md:text-right mb-0 -mt-[2.2rem] md:mb-0 pr-4"
+                  className="block text-gray-800 text-base font-normal md:text-right mb-0 xs:mt-[2.2rem] xl:-mt-[2.2rem] md:mb-0 pr-4"
                   htmlFor="inline-full-name"
                 >
                   Description:

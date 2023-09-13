@@ -2,14 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
 
-function AboutUs() {
+function Aboutus() {
   return (
 
     <>
     
     <Head>
         <title> OZAssignment - About Us</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="yes" name="mobile-web-app-capable" />
@@ -129,4 +129,4 @@ Online Assignment Help*/}
   )
 }
 
-export default AboutUs
+export default Aboutus

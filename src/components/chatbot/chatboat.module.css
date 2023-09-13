@@ -1,0 +1,75 @@
+
+
+
+
+
+
+/* Chat button container styles */
+.chatButtonContainer {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2147483636;
+  }
+  
+  /* Chat button base styles */
+  .chatButton {
+    background: linear-gradient(150deg, #3BAFD9, rgb(33, 149, 192));
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Icon styles */
+  .moveOut .outIcon {
+    transform: scale(1);
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  
+  .outIcon {
+    transform: scale(1);
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Ripple animation */
+  .chatButton::before,
+  .chatButton::after {
+    content: '';
+    border-radius: 50%;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes at-ripple {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  /* Add hover styles for the chat button */
+  .chatButton:hover {
+    background: linear-gradient(150deg, #3BAFD9, rgb(33, 149, 192));
+    transform: scale(1.1);
+  }
+  
+

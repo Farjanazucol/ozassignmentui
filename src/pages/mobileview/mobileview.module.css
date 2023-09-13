@@ -1,0 +1,9 @@
+.Navmobilemenu li:hover>ul {
+   
+    transform: translatex(-30%) scale(1);
+}
+
+.Childmenu li:hover>ul {
+   
+    transform: translatex(48%) scale(1);
+}

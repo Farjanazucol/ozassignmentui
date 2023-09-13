@@ -45,8 +45,8 @@ export default function Layout({children}) {
               <g>
                 <defs>
                   <linearGradient id="linear">
-                    <stop offset="0%" stop-color="#3BAFD9"></stop>
-                    <stop offset="100%" stop-color="rgb(33,149,192)"></stop>
+                    <stop offset="0%" stopColor="#3BAFD9"></stop>
+                    <stop offset="100%" stopColor="rgb(33,149,192)"></stop>
                   </linearGradient>
                 </defs>
                 <path

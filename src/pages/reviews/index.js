@@ -15,47 +15,7 @@ function Reviews() {
 
 
 
-  //1)function
 
-// useEffect(()=>{
-  
-
-//   async function fetchData() {
-//     try {
-//       const response = await fetch(`${CONSTANTS.NGROK_URL}oz/api/all-reviews`);
-      
-//       if (!response.ok) {
-//         throw new Error(`HTTP error! Status: ${response.status}`);
-//       }
-  
-//       const contentType = response.headers.get("content-type");
-//       if (contentType && contentType.includes("application/json")) {
-//         const data = await response.json();
-//         console.error("data********", data);
-//         setReviewsData(data.results);
-
-
-       
-
-
-//       } else {
-//         console.error("Response was not JSON.");
-//         // Handle non-JSON responses as needed.
-//       }
-//     } catch (error) {
-//       console.error("Error fetching or parsing data:", error.message);
-//       // Handle the error gracefully, e.g., display an error message to the user
-//     }
-//   }
-  
-//   fetchData()
-// },[])
-
-
-
-
-
-//3)used rd function
 //******************************** */
 
 const [page, setPage] = useState(1); // Initialize page state with 1
@@ -103,7 +63,7 @@ const loadMore = () => {
 
 <Head>
         <title> OZAssignment - Reviews</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="yes" name="mobile-web-app-capable" />

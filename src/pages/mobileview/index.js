@@ -8,11 +8,9 @@ import Head from 'next/head';
 
 
 
+ import Style from "./mobileview.module.css"
 
-
-
-
-function Services() {
+function Servicesmobile() {
   const router = useRouter();
    //fetch data from API
    const [servicesData, setServicesData] = useState([]);
@@ -78,7 +76,7 @@ function Services() {
   <>
   <Head>
         <title> OZAssignment Help</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="yes" name="mobile-web-app-capable" />
@@ -88,7 +86,7 @@ function Services() {
 
 <div className="group inline-block">
 <div
- className={`py-2 text-base font-normal leading-6  outline-none focus:outline-none   pl-2 rounded-sm flex items-center  font-normal${
+ className={`py-2 text-base font-normal leading-6  outline-none focus:outline-none   rounded-sm flex items-center  font-normal${
   activeLink === '/services' ? 'text-[#1E4755] hover:border-b-2 hover:border-orange-600 pb-1' : 'text-[#1E4755]'
 }`}
 // onClick={() => handleLinkClick('/services')}
@@ -96,12 +94,12 @@ function Services() {
  
   aria-current="page"
 >
-  <span className="font-normal flex-1 text-[#1E4755]">Services</span>
+  <span className="pr-1 font-normal flex-1 text-[#1E4755]">Services</span>
   <span className="font-normal">
     <BiChevronDown className='w-6 h-6 text-[#1E4755]' />
   </span>
 </div>
-<ul className="bg-[#f9f9f9]  min-h-[600px] min-w-[30px] rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top  z-50 text-sm   ">
+<ul className={`bg-[#f9f9f9]  min-h-[600px] min-w-[30px] rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top  z-50 text-sm ${Style.Navmobilemenu}`}>
   {servicesData.map((object, i) => (
     <li key={i.id} className="rounded-sm py-1 px-3 hover:bg-gray-100">
       <button className="w-full text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
@@ -115,7 +113,7 @@ function Services() {
        
         <BiChevronUp className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
       </button>
-      <ul className="bg-[#f8fcfc] min-h-[600px] max-lg:w-50 rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
+      <ul className={`bg-[#f8fcfc] min-h-[600px] max-lg:w-50 rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50 ${Style.Childmenu}`}>
         {object.children.map((child) => (
           <li key={child.id} className="rounded-sm w-full   relative px-3 py-1 hover:bg-gray-100">
             <button className="text-left flex items-center outline-none focus:outline-none hover:text-orange-500">
@@ -129,10 +127,10 @@ function Services() {
                   </Link>
               <BiChevronUp className='w-6 h-6 text-[#1E4755] hover:text-orange-500' />
             </button>
-            <ul className="bg-white min-h-[600px] w-96 rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
+            <ul className="bg-gray-50 min-h-[600px] w-[14.4rem] -left-28 rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left z-50">
              
               {child.children.map((grandchild, i) => (
-                <li key={grandchild.id} className="rounded-sm relative px-3 py-1 hover:bg-gray-100 grid-cols-3">
+                <li key={grandchild.id} className="rounded-sm relative pr-3 p-2 py-1 hover:bg-gray-100 grid-cols-3">
                   <Link 
                   // href={'services/' + grandchild.slug + "/"} 
                   href="/services/[slug]"
@@ -157,4 +155,4 @@ function Services() {
   )
 }
 
-export default Services
+export default Servicesmobile
