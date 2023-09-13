@@ -28,16 +28,18 @@ function Footer() {
     <>
       <div className="bg-[#1E4755]">
         {/* <div className="mx-auto w-7xl flex  py-32 px-2  lg:px-32 sm:px-6 sm:py-32 grid-cols-2 justify-between"> */}
-        <div className="relative isolate overflow-hidden  xl:py-16 sm:py-24 lg:py-32">
-          <div className="mx-auto w-7xl px-6 lg:px-32">
+        <div className="relative isolate overflow-hidden  xl:py-16 sm:py-24 lg:py-32 max-sm:px-8">
+          <div className="mx-auto w-7xl max-sm:px-2 px-6 lg:px-32">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-5">
               <div className="py-12">
-                <Image
+               <Link href={"/"}>
+               <Image
                   src="/assets/ozfooterlogo.png"
                   width={160}
                   height={20}
                   alt="footerlogo"
                 />
+               </Link>
                 {/* <h2 className="text-3xl font-bold tracking-tight text-white sm:text-3xl pt-8 pb-0">Special Offers 
                 </h2>
               <p className='text-gray-300 mt-1'>Subscribe to avail our special offers</p>
@@ -49,66 +51,87 @@ function Footer() {
                   Get To Know Us{" "}
                 </h2>
 
+                <p className="mt-4 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <span className="mt-4 text-base leading-8 text-gray-300">
+                
                     {" "}
                     How It Works
-                  </span>
+                 
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                 
                     {" "}
                     Reviews
-                  </p>
+                
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <span className="mt-1 text-base leading-8 text-gray-300">
+                 
                     {" "}
                     Experts
-                  </span>
+                 
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                 
                     {" "}
                     Contact Us
-                  </p>
+                 
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                 
                     {" "}
                     Blog
-                  </p>
+                 
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                
                     {" "}
                     Jobs
-                  </p>
+                
                 </Link>
+                </p>
+
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                
                     {" "}
                     Get $2000
-                  </p>
+                 
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                  
                     {" "}
                     Resume
-                  </p>
+                
                 </Link>
+                </p>
+                <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                 
                     {" "}
                     Legit Essay
-                  </p>
+                 
                 </Link>
+                </p>
+                <p className="mt-1 text-base font-bold leading-8 text-orange-600">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base font-bold leading-8 text-orange-600">
+                
                     {" "}
                     Our Offers
-                  </p>
+                
                 </Link>
+                </p>
               </div>
               <div className="max-w-xl lg:max-w-lg">
                 <h2 className="text-xl font-bold tracking-tight text-white lg:text-xl">
@@ -133,20 +156,24 @@ function Footer() {
                     Faqs
                   </p>
                 </Link> */}
+  <p className="mt-1 text-base leading-8 text-gray-300">
                 <Link href={"/"}>
-                  <p className="mt-1 text-base leading-8 text-gray-300">
+                
                     {" "}
                     Resources
-                  </p>
+                 
                 </Link>
-
+                </p>
                 {/* <Link href={"/"}>
                   <p className="mt-1 text-base leading-8 text-gray-300">
                     {" "}
                     Premium
                   </p>
                 </Link> */}
-                <Link href={"https://www.ozassignments.com/terms-conditions/"} target="_blank">
+
+                
+                <Link href="https://www.ozassignments.com/terms-conditions/" 
+                target="_blank">
                   <p className="mt-1 text-base leading-8 text-gray-300">
                     {" "}
                     Term Of Use
@@ -252,9 +279,9 @@ function Footer() {
               </div>
             </div>
             <hr className="mt-16" />
-            <div className="grid grid-cols-2 justify-between">
-              <div className="py-12">
-                <div className="text-center items-center text-orange-700 font-bold pb-12">
+            <div className="grid grid-cols-2 justify-between py-8 pt-12">
+              <div className="">
+                <div className="text-center items-center text-orange-700 font-bold ">
                   <Link href={"/"} className="hover:text-gray-400 px-2">
                     Refund Policy
                   </Link>
@@ -275,11 +302,9 @@ function Footer() {
                     FAQ
                   </Link>
                 </div>
-                <h1 className="text-gray-300">
-                  © 2012-23 OZ Assignments All rights reserved.
-                </h1>
+               
               </div>
-              <div className="flex justify-evenly xl:px-64 lg:px-64 py-16">
+              <div className="flex justify-evenly xl:px-64 lg:px-64 ">
                 <Link
                   href={"https://www.facebook.com/OzAssignmentHelp/"}
                   target="_blank"
@@ -317,8 +342,13 @@ function Footer() {
                 </Link>
               </div>
             </div>
+            <div>
+            <h1 className="text-gray-300 xl:text-left lg:text-left xs:text-center ">
+                  © 2012-23 OZ Assignments All rights reserved.
+                </h1>
+            </div>
 
-            <div className=" text-center items-center mx-auto grid w-7xl   lg:max-w-none lg:grid-cols-3   justify-between">
+            <div className=" text-center items-center mx-auto grid w-7xl pt-8  lg:max-w-none lg:grid-cols-3   justify-between">
               <div>
                 <Image
                   src="/assets/visacard.png"

@@ -1,19 +1,12 @@
-import { Fragment, useEffect, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import {  useEffect, useState } from "react";
+import { Dialog, Popover } from "@headlessui/react";
 import {
-  ArrowPathIcon,
+ 
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
+ 
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+
 import Image from "next/image";
 import Link from "next/link";
 import Services from "@/pages/services";
@@ -128,7 +121,9 @@ export default function Example() {
                 <span style={{ color: "#1E4755" }}>/</span>
 
                 <Link
+                
                   href="https://www.ozassignments.com/en/accounts/signup/"
+                  target="_blank"
                   className="pr-4  px-3 py-2 text-base font-medium"
                   style={{ color: "#1E4755" }}
                 >

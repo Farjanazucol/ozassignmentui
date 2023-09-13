@@ -23,7 +23,7 @@ function Aboutus() {
    
   <div className="w-full sm:w-1/2 md:w-1/2  xl:w-1/2 p-4 ">
   <div>
-  <h1 className=' font-extrabold text-4xl leading-[3rem] text-[#1E4755]' >About  <span className='text-orange-400 '>Oz Assignment</span><br/>
+  <h1 className=' font-extrabold text-3xl leading-[3rem] text-[#1E4755]' >About  <span className='text-orange-400 '>Oz Assignment</span><br/>
 </h1>
   <p className='text-2xl leading-10 pt-5 font-bold opacity-80'  style={{color:"#1E4755"}} >Solving queries around all things “assignments”
 </p>

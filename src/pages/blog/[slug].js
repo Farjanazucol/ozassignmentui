@@ -98,7 +98,7 @@ function BlogDetails({ blog, allBlogs }) {
               backgroundRepeat: 'repeat-y',
               backgroundPosition: 'top center', // Center the background image
             }}>
-              <h1 className='text-center text-4xl font-bold leading-[3rem] text-white' > {blog.title}</h1>
+              <h1 className='text-center text-3xl font-bold leading-[3rem] text-white' > {blog.title}</h1>
             </div>
             <div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
 

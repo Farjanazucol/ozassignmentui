@@ -93,7 +93,7 @@ function Blogs() {
         backgroundRepeat: 'repeat-y',
         backgroundPosition: 'top center', // Center the background image
       }}>
-        <h1 className='text-center text-4xl font-bold leading-[3rem] text-white' >All Blog Articles</h1>
+        <h1 className='text-center text-3xl font-bold leading-[3rem] text-white' >All Blog Articles</h1>
       </div>
       <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 ">
         {/* <div className="container mx-auto"> */}

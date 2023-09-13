@@ -74,7 +74,7 @@ const Slider = () => {
         <div className=' text-center ' key={index}>
              <div
          
-          className={` h-96 xs:pt-5 sm:pt-20  ${currentIndex === index ? '' : 'hidden'}`}
+          className={` h-96 py-8 ${currentIndex === index ? '' : 'hidden'}`}
         >
           <Image
           width={50}
@@ -83,9 +83,9 @@ const Slider = () => {
             alt="Image"
             className=" items-center text-center mx-auto "
           />
-          <h1 className=" inset-x-0 bottom-24 z-20 w-2/5 mx-auto  py-8 text-md text-center sm:leading-4 lg:leading-8  bg-opacity-25 font-medium" style={{color:"#1E4755"}}>
+          <p className=" inset-x-0 bottom-24 z-20 xl:w-2/5 lg:w-2/5  xs:w-[85%] mx-auto  py-8 text-md text-center sm:leading-4 lg:leading-8  bg-opacity-25 font-medium" style={{color:"#1E4755"}}>
             {card.content}
-          </h1>
+          </p>
           <p className="author mt-0">- <span >{card.authorname}</span> <small><em className="text-black">{card.surname}</em></small></p>
           
         </div>
@@ -93,7 +93,7 @@ const Slider = () => {
        
       ))}
 
-      <button
+      {/* <button
         onClick={back}
         className="absolute left-14 top-1/2 -translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200"
       >
@@ -133,7 +133,7 @@ const Slider = () => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-      </button>
+      </button> */}
 
       <div className="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
         {cardData.map((_, index) => (

@@ -119,17 +119,17 @@ export default function Home() {
         <meta content="yes" name="apple-mobile-web-app-capable" />
       </Head>
       <div className="bg-white " >
-        <div className="   px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between" style={{ backgroundColor: "#E6E7FD" }}>
+        <div className="    py-24 lg:px-32 px-8 sm:pt-16  grid-cols-2 justify-between max-sm:py-12" style={{ backgroundColor: "#E6E7FD" }}>
           {/* <div className="container mx-auto"> */}
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap flex-no-wrap sm:flex-wrap max-sm:flex-col-reverse lg:flex-wrap xl:flex-wrap ">
 
-            <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4 ">
+            <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3  ">
               <div>
-                <h1 className='font-semibold text-3xl leading-[3rem]' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span>
+                <h1 className='font-semibold text-3xl leading-[3rem]  max-sm:hidden' style={{ color: "#1E4755" }} >Online <span className='text-orange-400'>Proofreading</span>
                   <span> Services</span></h1>
-                <p className='text-2xl leading-10 pt-5 font-bold opacity-80' style={{ color: "#1E4755" }} >Solving queries around all things “assignments”
+                <p className='text-2xl leading-10 pt-5 font-bold opacity-80  max-sm:hidden' style={{ color: "#1E4755" }} >Solving queries around all things “assignments”
                 </p>
-                <p className='text-base leading-8 max-w-lg  pt-9 font-medium' style={{ color: "#1E4755" }} >Facing trouble with giving your assignments a final touch? We at Oz, provide Online Proofreading and Editing Services.
+                <p className='text-base leading-8 max-w-lg  pt-9 font-medium  max-sm:hidden' style={{ color: "#1E4755" }} >Facing trouble with giving your assignments a final touch? We at Oz, provide Online Proofreading and Editing Services.
                 </p>
 
                 <div className=' mt-10'>
@@ -255,7 +255,7 @@ export default function Home() {
 
 
 
-            <div className="w-full  md:w-1/2 xl:w-1/3 p-4   ">
+            <div className="w-full  md:w-1/2 xl:w-1/3   ">
               {/* Form Design */}
 
               <Form />
@@ -268,8 +268,8 @@ export default function Home() {
       </div>
 
       {/* Online Educational Assistance */}
-      <div className="bg-white py-8 pb-24">
-        <div className='text-center items-center  pt-16 px-2 lg:px-32 sm:px-6 sm:pt-16'>
+      <div className="bg-white max-sm:py-4 py-8 pb-24 ">
+        <div className='text-center items-center max-sm:py-8  pt-16 px-2 lg:px-32 sm:px-6 sm:pt-16'>
           <h1 className='text-3xl font-semibold' style={{ color: "#1E4755" }}>Online Educational Assistance</h1>
           <div className='items-center text-center'>
             <span className=' w-1/3  h-0.5 pt-0 bg-orange-600 inline-block'></span>
@@ -277,7 +277,7 @@ export default function Home() {
             <span className='absolute -mt-3 -ml-6 w-14  h-2 items-center bg-orange-600 inline-block'></span>
           </div>
         </div>
-        <div className="mx-auto w-7xl flex lg:mt-16 mb-0 pt-16 px-2 sm:py-32 lg:pb-10 lg:px-32 sm:px-6 sm:pt-16 sm:grid-cols-1  grid-cols-4 justify-between">
+        <div className="mx-auto w-7xl flex lg:mt-16 mb-0 pt-16 max-sm:px-8 sm:py-32 lg:pb-10 lg:px-32 sm:px-6 sm:pt-16 sm:grid-cols-1  grid-cols-4 justify-between max-sm:py-8">
           {/* <div className="container mx-auto"> */}
           <div className="flex flex-wrap -mx-4">
             <div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/4 p-4 pt-10 ">
@@ -370,8 +370,8 @@ export default function Home() {
       {/* Online Educational Assistance End*/}
 
       {/* Assignment Help Services */}
-      <div className="bg-white py-4 pb-24" style={{ backgroundColor: "#fbfbfb" }}>
-        <div className='text-center items-center px-2 lg:px-32 sm:px-6 sm:pt-16'>
+      <div className="bg-white   pb-24" style={{ backgroundColor: "#fbfbfb" }}>
+        <div className='text-center items-center px-2 lg:px-32 sm:px-6 max-sm:pt-14 pt-20'>
           <h1 className='text-3xl font-semibold' style={{ color: "#1E4755" }}>Assignment Help Services</h1>
           <div className='items-center text-center'>
             <span className=' w-1/3  h-0.5 pt-0 bg-orange-600 inline-block'></span>
@@ -380,11 +380,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" flex  pt-16 px-2  lg:px-32 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between gap-x-8 gap-y-4">
+        <div className=" flex  max-sm:pt-6  pt-16 px-2  lg:px-32 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between gap-x-8 gap-y-4 max-sm:px-8">
           {/* <div className="container mx-auto"> */}
-          <div className="flex flex-wrap -mx-4 ">
+          <div className="flex flex-wrap -mx-4">
 
-            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 pt-10">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 max-xs:px-8 pt-10">
               <div className='text-center  xs:max-w-full max-w-[400px] min-h-[650px] border-solid border  rounded-xl border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0 grid-rows-4'>
 
 
@@ -503,17 +503,17 @@ export default function Home() {
 
 
 
-      <div className="bg-white py-8 pb-24">
+      <div className="bg-white py-8 pb-8">
         <div className='text-center items-center px-2 lg:px-32 sm:px-6 sm:pt-16'>
 
-          <h1 className='text-3xl font-semibold' style={{ color: "#1E4755" }}>Testimonials</h1>
+          <h1 className='text-3xl font-semibold max-sm:pt-8' style={{ color: "#1E4755" }}>Testimonials</h1>
           <div className='items-center text-center'>
             <span className=' w-1/5  h-0.5 pt-0 bg-orange-600 inline-block'></span>
             <br />
             <span className='absolute -mt-3 -ml-6 w-14  h-2 items-center bg-orange-600 inline-block'></span>
           </div>
 
-          <div className="mx-auto w-7xl flex  pt-16 px-2   sm:pt-16">
+          <div className="mx-auto w-7xl flex  pt-16    sm:pt-20">
             <ImageSlider />
           </div>
 
@@ -529,9 +529,9 @@ export default function Home() {
 
       {/* Contact Page */}
 
-      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 ">
+      <div className="px-2 pb-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 ">
 
-        <div className="flex flex-wrap  -mx-4">
+        <div className="flex flex-wrap max-sm:px-8">
 
 
 
@@ -564,7 +564,7 @@ export default function Home() {
 
 
           </div>
-          <div className="w-full sm:w-1/2 md:w-7/12  xl:w-8/12 p-4 px-8 pt-0">
+          <div className="w-full sm:w-1/2 md:w-7/12  xl:w-8/12 p-4  max-sm:px-0 px-8 pr-0 pt-0 max-sm:pt-16">
             <div>
               <h1 className='text-left font-b text-3xl text-[#1E4755] '>REQUEST FOR <span className='text-orange-600'>CALL BACK</span>
               </h1>
@@ -638,7 +638,7 @@ export default function Home() {
                 )}
                 </div>
 
-                <div className=" sm:mt-6  items-center text-center">
+                <div className=" sm:mt-6 max-sm:pt-8  items-center text-center">
                   <button type="submit" className="  rounded-md  bg-orange-600 sm:px-10 px-2 py-2 mt-4 sm:py-2 md:px-20 xl:px-10 xl:py-3  text-center text-lg font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">Submit Request</button>
 
                 </div>
