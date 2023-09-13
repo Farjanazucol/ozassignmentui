@@ -73,12 +73,12 @@ function ServiceDetails({ service, allServices }) {
 
 
       <div key={service.id}>
-         <div className=" bg-[#E6E7FD] pt-16 px-2 lg:py-16 sm:py-16 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
+         <div className=" bg-[#E6E7FD] pt-16 px-2 lg:py-16 sm:py-16 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between max-sm:px-8 max-sm:py-8">
 {/* <div className="container mx-auto"> */}
     <div className="flex flex-wrap -mx-4">
     <div className="w-full sm:w-9/12 xs:w-full md:w-1/3  xl:w-2/3  p-4 pt-10">
   <div>
-    <h1 className=' font-extrabold sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl w-[70%] leading-[3rem]' style={{ color: "#1E4755" }} >{service.banner_heading
+    <h1 className=' font-extrabold text-3xl  leading-[3rem]' style={{ color: "#1E4755" }} >{service.banner_heading
 }
 
     </h1>
@@ -147,7 +147,7 @@ function ServiceDetails({ service, allServices }) {
 </div>
 {/* </div> */}
 </div>  
-<div className="mx-auto w-full px-6 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
+<div className="mx-auto w-full px-6 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between max-sm:px-8">
        
         <div  dangerouslySetInnerHTML={{ __html: service.description }} />
       

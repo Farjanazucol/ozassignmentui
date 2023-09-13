@@ -81,7 +81,7 @@ function BlogDetails({ blog, allBlogs }) {
       <div>
         {blog.map((blog) => (
           <div key={blog.id}>
-            <div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  justify-between" style={{
+            <div className="mx-auto w-full  py-24 lg:px-32 sm:px-6 sm:pt-16  justify-between max-sm:px-4" style={{
 
               backgroundImage: `url('/assets/aboutimage.png')`,
 
@@ -100,7 +100,7 @@ function BlogDetails({ blog, allBlogs }) {
             }}>
               <h1 className='text-center text-3xl font-bold leading-[3rem] text-white' > {blog.title}</h1>
             </div>
-            <div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between">
+            <div className="mx-auto w-full  py-24 lg:px-32 sm:px-6 sm:pt-16 grid-cols-2 justify-between ">
 
               <div className={Style.CustomContainer} dangerouslySetInnerHTML={{ __html: blog.description }} />
 

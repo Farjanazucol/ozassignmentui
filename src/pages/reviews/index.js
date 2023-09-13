@@ -72,7 +72,7 @@ const loadMore = () => {
       <div className=" bg-[#E6E7FD]">
         <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between max-sm:py-12 max-sm:px-8">
         {/* <div className="container mx-auto"> */}
-            <div className="flex flex-wrap flex-no-wrap sm:flex-wrap max-sm:flex-col-reverse lg:flex-wrap xl:flex-wrap -mx-4">
+            <div className="flex flex-wrap  -mx-4">
             <div className="w-full sm:w-1/2 xs:w-full  md:w-1/2  xl:w-2/3 p-4 ">
           <div>
            
@@ -110,6 +110,9 @@ const loadMore = () => {
               </div>
             </div>
 
+
+
+
           </div>
           </div>
           <div className="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4  ">
@@ -117,7 +120,12 @@ const loadMore = () => {
 
           <Form />
           {/* End Form Design */}
+
+
+          
 </div>
+
+
         </div>
         {/* </div> */}
         </div>
