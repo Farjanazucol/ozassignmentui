@@ -76,7 +76,7 @@ function Blogs() {
   
 
     <div className="bg-white " >
-      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 " style={{
+      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1" style={{
 
         backgroundImage: `url('/assets/blogimagebackg.jpg')`,
 
@@ -95,9 +95,9 @@ function Blogs() {
       }}>
         <h1 className='text-center text-3xl font-bold leading-[3rem] text-white' >All Blog Articles</h1>
       </div>
-      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 ">
+      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1  max-sm:px-8">
         {/* <div className="container mx-auto"> */}
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap">
 
 
             <div className="w-full sm:w-1/2 md:w-1/4  xl:1/4 p-1 pt-10 ">
@@ -142,17 +142,17 @@ function Blogs() {
 
 
             </div>
-            <div className="w-full sm:w-1/2 md:w-9/12  xl:w-9/12 p-4 pr-2 pt-10">  
+            <div className="w-full sm:w-1/2 md:w-9/12  xl:w-9/12 p-4 pr-0 max-sm:px-1  pt-10">  
              <div>
               {blogs.map((object , i ) => (
                 <div className='border-2 mb-4 px-4 py-4 sm:h-50 lg:h-40 xl:h-40' key={i}>
                  <div className='flex' >
-                 <Link href={'blog/' + object.slug + "/"} className='text-[#333333] text-lg cursor-pointer'>{object.title} <span className=' w-1/5  h-0.5 pt-0 bg-orange-600 inline-block hover:bg-sky-800 hover:w-[40%] right-0'>
+                 <Link href={'blog/' + object.slug + "/"} className='text-[#333333] text-lg cursor-pointer'>{object.title} <span className=' w-1/5  h-0.5 pt-0 bg-orange-600 inline-block hover:bg-sky-800 hover:w-[40%] right-0 max-sm:hidden'>
                     
                     </span>
                     </Link>
                   </div>
-                  <p className='text-normal text-gray-500 md: py-0 lg:py-8 xl:py-4 md:w-[100%] lg:w-[65%] xl:w-[100%]'>{object.seo_description}</p>
+                  <p className='text-normal text-gray-500 md: py-0 lg:py-2 xl:py-2 md:w-[100%] xl:w-[100%]'>{object.seo_description}</p>
 
                 </div>
               ))}

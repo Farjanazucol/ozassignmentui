@@ -384,7 +384,7 @@ export default function Home() {
           {/* <div className="container mx-auto"> */}
           <div className="flex flex-wrap -mx-4">
 
-            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 max-xs:px-8 pt-10">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 pt-10">
               <div className='text-center  xs:max-w-full max-w-[400px] min-h-[650px] border-solid border  rounded-xl border-gray-300  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 skew-y-0 grid-rows-4'>
 
 
@@ -529,9 +529,9 @@ export default function Home() {
 
       {/* Contact Page */}
 
-      <div className="px-2 pb-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 ">
+      <div className=" pb-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 max-sm:px-8">
 
-        <div className="flex flex-wrap max-sm:px-8">
+        <div className="flex flex-wrap ">
 
 
 
@@ -564,13 +564,13 @@ export default function Home() {
 
 
           </div>
-          <div className="w-full sm:w-1/2 md:w-7/12  xl:w-8/12 p-4  max-sm:px-0 px-8 pr-0 pt-0 max-sm:pt-16">
+          <div className="w-full sm:w-1/2 md:w-7/12  xl:w-8/12 p-4  max-sm:px-0 px-8 pr-0 pt-0 max-sm:pt-10">
             <div>
               <h1 className='text-left font-b text-3xl text-[#1E4755] '>REQUEST FOR <span className='text-orange-600'>CALL BACK</span>
               </h1>
               <span className=' w-[4rem] h-0.5 pt-0 bg-orange-600 inline-block'></span>
               <form  className="mx-auto  max-w-7xl " onSubmit={formik.handleSubmit}>
-                <div className=' grid grid-cols-2  py-2 space-x-8'>
+                <div className=' grid grid-cols-2 max-xs:grid-cols-1  py-2 space-x-8 max-xs:space-x-0'>
 
 
                   <div className="mt-6">
@@ -594,6 +594,8 @@ export default function Home() {
                 )}
                    
                   </div>
+
+                  
 
                   <div className="mt-6 ">
                   <input

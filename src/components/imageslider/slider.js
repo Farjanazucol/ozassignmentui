@@ -74,7 +74,7 @@ const Slider = () => {
         <div className=' text-center ' key={index}>
              <div
          
-          className={` h-96 py-8 ${currentIndex === index ? '' : 'hidden'}`}
+          className={` h-96 max-sm:h-80 py-8 ${currentIndex === index ? '' : 'hidden'}`}
         >
           <Image
           width={50}

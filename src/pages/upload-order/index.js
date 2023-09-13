@@ -147,7 +147,7 @@ function UploadDocument() {
       </Head>
 
       <div className="bg-[#E6E7FD]">
-        <div className="  px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between">
+        <div className="  px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between max-sm:px-8 max-sm:py-8">
           {/* <div className="container mx-auto"> */}
           <div className="flex flex-wrap  -mx-4">
             <div className="w-full sm:w-1/2 md:w-1/2  xl:w-1/2 p-4 ">
@@ -186,9 +186,9 @@ function UploadDocument() {
         </div>
       </div>
 
-      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1">
+      <div className="px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between sm:grid-cols-1 max-sm:px-8 max-sm:py-8">
         <div className="flex flex-wrap">
-          <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 p-4 ">
+          <div className="w-full sm:w-9/12 xs:w-full md:w-1/2  xl:w-2/3 ">
           <form className="w-full" onSubmit={formik.handleSubmit}>
             <h1 className="text-blue-500 font-medium text-2xl pb-12">
               Personal Details
@@ -515,7 +515,7 @@ function UploadDocument() {
           </form>
           </div>
 
-          <div className=" sm:px-8 xl:px-0 lg:px-0  w-full  md:w-1/2 xl:w-1/3 p-4  ">
+          <div className=" sm:px-8 xl:px-0 lg:px-0  w-full  md:w-1/2 xl:w-1/3  max-sm:py-8">
             <div className="border-2 shadow-md pl-0 ">
               <div className="text-left sm:py-4 md:py-4 xl:py-4 xs:px-custom space-x-4 sm:px-4 md:px-4 xl:px-4 lg:px-4">
                 <p className="font-bold text-blue-500 space-x-4 py-4">

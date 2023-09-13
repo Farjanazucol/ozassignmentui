@@ -17,7 +17,7 @@ function Aboutus() {
     </Head>
   
     <div className="bg-white " >
-  <div className="  px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between">
+  <div className="  px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between max-sm:px-8 max-sm:py-8">
   {/* <div className="container mx-auto"> */}
             <div className="flex flex-wrap  -mx-4">
    
@@ -48,7 +48,7 @@ function Aboutus() {
 </div>
 
 
-<div className="  px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between" style={{backgroundColor:"#E6E7FD"}}>
+<div className="  px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  grid-cols-2 justify-between max-sm:px-8 max-sm:py-8" style={{backgroundColor:"#E6E7FD"}}>
   {/* <div className="container mx-auto"> */}
             <div className="flex flex-wrap  -mx-4">
    
@@ -77,7 +77,7 @@ function Aboutus() {
     {/* </div> */}
 </div>
 
-<div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  space-x-2 justify-between space-y-4">
+<div className="mx-auto w-full px-2 py-24 lg:px-32 sm:px-6 sm:pt-16  space-x-2 justify-between space-y-4 max-sm:px-8 max-sm:py-8">
   <h1 className='text-3xl font-bold text-[#555555] '>Online Proof Reading Services of Australia
 </h1>
 <p className='text-normal text-gray-800'>Oz Assignments is the leading online editing service provider, based in Australia. We are the stalwarts in providing the best quality online proofreading service for the students. Our online service is specially designed for helping students studying at Australian Universities. Our services are basically focused on providing the students with high-quality academic guidance so that they can score better grades in their services – papers. Moreover, we are focused on serving the students the best possible way we can. As students often find it hard to manage many balls in the air, they feel many difficulties in their academics. To share their workload, we have come up with our online services.
